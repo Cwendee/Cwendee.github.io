@@ -109,3 +109,54 @@ body {
     margin-top: 4.5rem; /* extra breathing room on desktop */
   }
 }
+
+/* ===============================
+   SKILLS CARD HOVER + CLICK GLOW
+================================ */
+
+/* Target existing skill cards safely */
+[data-skill-card] {
+  transition: all 0.25s ease;
+}
+
+/* Hover (mouse touch) */
+[data-skill-card]:hover {
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.75);
+  transform: translateY(-3px);
+}
+
+/* Click */
+[data-skill-card]:active {
+  box-shadow: 0 0 26px rgba(56, 189, 248, 1);
+  transform: scale(0.97);
+}
+
+/* Emoji bounce restore */
+[data-skill-card] .emoji {
+  animation: bounce 1.4s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ===============================
+   HERO → SKILLS SPACING
+================================ */
+.hero-block {
+  margin-bottom: 4rem;
+}
+
+.skills-block {
+  margin-top: 3rem;
+}
+
+.cta-block {
+  margin-top: 3.5rem;
+}
+
+/* Jenkins icon visibility fix */
+.jenkins-icon {
+  filter: brightness(1.6) contrast(1.3);
+}

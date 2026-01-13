@@ -137,3 +137,11 @@ title: Pruddieverse
     }
   });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("h1")?.classList.add("hero-block");
+  document.querySelector(".skills")?.classList.add("skills-block");
+  document.querySelector(".cta")?.classList.add("cta-block");
+});
+</script>
