@@ -1,6 +1,62 @@
----
-layout: default
-title: Pruddieverse
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pruddieverse</title>
 
-{% include home.html %}
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-[#0b132b] text-gray-200">
+
+  <!-- NAV -->
+  <nav class="flex justify-between items-center px-10 py-6">
+    <a href="/" class="text-xl font-semibold">Pruddieverse</a>
+    <div class="space-x-6 text-sm">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="flex flex-col items-center text-center mt-20 px-6">
+    <h1 class="text-4xl font-semibold mb-4">Building the Pruddieverse</h1>
+    <p class="max-w-2xl text-lg font-medium text-gray-300">
+      I don’t just solve technical problems, I bridge the gap between human needs and automated solutions.
+    </p>
+
+    <!-- HEADSHOT -->
+    <img src="assets/images/headshot.jpg"
+         class="mt-10 w-56 h-auto rounded-2xl shadow-lg"
+         alt="Prudence Anumudu">
+
+    <!-- CTA -->
+    <a href="projects.html"
+       class="mt-12 px-8 py-4 bg-gray-700 rounded-xl
+              hover:shadow-[0_0_20px_#4cc9f0]
+              transition duration-300">
+      🚀 Explore the Laboratory
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-32 pb-10 flex justify-center space-x-8 text-xl">
+    <a href="https://github.com/Cwendee" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">LinkedIn</a>
+    <a href="mailto:pruddyanumudu@gmail.com">Email</a>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
