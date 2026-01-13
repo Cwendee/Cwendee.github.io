@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-  
+  <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
-  <!-- Custom Styles -->
+
   <style>
-    /* Force navy midnight blue */
     body {
-      background-color: #0b1120 !important;
+      background-color: #0b1120; /* Navy midnight blue */
       color: #ffffff;
     }
   </style>
@@ -38,7 +39,7 @@
   <main class="flex flex-col items-center justify-center w-full pt-28 pb-16 space-y-8">
 
     <!-- Headshot -->
-    <img data-aos="fade-up" src="/assets/images/headshot.jpg" alt="Prudence Anumudu" 
+    <img data-aos="fade-up" src="/assets/images/headshot.jpg" alt="Prudence Anumudu"
          class="rounded-3xl w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-cover border-4 border-gray-600">
 
     <!-- Hero Statement -->
@@ -49,44 +50,66 @@
 
     <!-- Skills Cards -->
     <div data-aos="fade-up" data-aos-delay="400" class="flex space-x-4 overflow-x-auto py-4">
-      <!-- Example card with click glow -->
+      <!-- AWS -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
-        <div class="text-2xl animate-bounce mb-1">⚡</div><span class="text-sm">AWS</span>
+        <div class="text-2xl animate-bounce mb-1">☁️</div><span class="text-sm">AWS</span>
       </div>
+      <!-- K8S -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
-        <div class="text-2xl animate-bounce mb-1">🧩</div><span class="text-sm">K8S</span>
+        <div class="text-2xl animate-bounce mb-1">🕹️</div><span class="text-sm">K8S</span>
       </div>
+      <!-- Terraform -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
         <div class="text-2xl animate-bounce mb-1">🏗️</div><span class="text-sm">Terraform</span>
       </div>
+      <!-- Ansible -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
         <div class="text-2xl animate-bounce mb-1">🤖</div><span class="text-sm">Ansible</span>
       </div>
+      <!-- Docker -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
-        <div class="text-2xl animate-bounce mb-1">🐳</div><span class="text-sm">Docker</span>
+        <div class="text-2xl animate-bounce mb-1">🐋</div><span class="text-sm">Docker</span>
       </div>
+      <!-- Bash -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
-        <div class="text-2xl animate-bounce mb-1">💻</div><span class="text-sm">Bash</span>
+        <div class="text-2xl animate-bounce mb-1">&gt;_</div><span class="text-sm">Bash</span>
       </div>
+      <!-- Git -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
-        <div class="text-2xl animate-bounce mb-1">🔗</div><span class="text-sm">Git</span>
+        <div class="text-2xl animate-bounce mb-1">🌿</div><span class="text-sm">Git</span>
       </div>
+      <!-- Jenkins -->
       <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 cursor-pointer">
-        <div class="text-2xl animate-bounce mb-1">🤹</div><span class="text-sm">Jenkins</span>
+        <img src="/assets/images/jenkins.png" alt="Jenkins" class="w-6 h-6 mb-1">
+        <span class="text-sm">Jenkins</span>
       </div>
     </div>
 
-    <!-- Explore Button -->
+    <!-- CTA Button -->
     <a data-aos="fade-up" data-aos-delay="600" href="/projects.html"
-       class="mt-6 inline-block px-6 py-3 bg-blue-600 rounded-lg text-white font-semibold hover:bg-blue-500 transition">
+       class="mt-6 inline-block px-6 py-3 bg-gray-800 rounded-lg text-white font-semibold
+              hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-400 active:ring-4 active:ring-blue-400 transition">
       🚀 Explore the Laboratory
     </a>
 
   </main>
 
   <!-- Footer -->
-  <footer class="w-full py-6 text-center text-gray-400">
-    &copy; 2025 Prudence Anumudu
+  <footer class="w-full py-6 text-center text-gray-400 flex flex-col items-center space-y-4">
+    <div class="flex space-x-6">
+      <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank" class="hover:opacity-80">
+        <img src="/assets/images/linkedin.png" alt="LinkedIn" class="w-8 h-8">
+      </a>
+      <a href="https://github.com/Cwendee/" target="_blank" class="hover:opacity-80">
+        <img src="/assets/images/github.png" alt="GitHub" class="w-8 h-8">
+      </a>
+      <a href="mailto:pruddyanumudu@gmail.com" class="hover:opacity-80">
+        <img src="/assets/images/email.png" alt="Email" class="w-8 h-8">
+      </a>
+    </div>
+    <div>
+      &copy; 2025 Prudence Anumudu
+    </div>
   </footer>
 
   <!-- AOS JS -->
