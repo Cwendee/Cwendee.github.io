@@ -172,3 +172,36 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
+/* Skill card interactions */
+[data-skill-card] {
+  transition: all 0.25s ease;
+}
+
+[data-skill-card]:hover {
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.75);
+  transform: translateY(-3px);
+}
+
+[data-skill-card]:active {
+  box-shadow: 0 0 26px rgba(56, 189, 248, 1);
+  transform: scale(0.97);
+}
+
+/* Emoji bounce */
+[data-skill-card] .emoji {
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Spacing */
+.hero-block { margin-bottom: 4rem; }
+.skills-block { margin-top: 3rem; }
+.cta-block { margin-top: 3.5rem; }
+
+/* Jenkins icon visibility */
+.jenkins-icon { filter: brightness(1.6) contrast(1.3); }
