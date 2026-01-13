@@ -15,7 +15,7 @@
   <!-- Custom Styles -->
   <style>
     body {
-      background-color: #0b1120; /* Deep midnight blue */
+      background-color: #0b1120; /* Navy midnight blue */
       color: #ffffff;
     }
   </style>
@@ -34,8 +34,52 @@
   </header>
 
   <!-- Main Content -->
-  <main class="flex flex-col items-center justify-center w-full pt-28 pb-16">
-    {{ content }}
+  <main class="flex flex-col items-center justify-center w-full pt-28 pb-16 space-y-8">
+
+    <!-- Headshot -->
+    <img data-aos="fade-up" src="/assets/images/headshot.jpg" alt="Prudence Anumudu" 
+         class="rounded-3xl w-48 md:w-64 lg:w-72 object-cover border-4 border-gray-600">
+
+    <!-- Hero Statement -->
+    <h1 data-aos="fade-up" class="text-3xl font-medium">Building the Pruddieverse</h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="text-lg font-semibold max-w-xl text-center">
+      I don’t just solve technical problems, I bridge the gap between human needs and automated solutions.
+    </p>
+
+    <!-- Skills Cards -->
+    <div data-aos="fade-up" data-aos-delay="400" class="flex space-x-4 overflow-x-auto py-4">
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">⚡</div><span class="text-sm">AWS</span>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">🧩</div><span class="text-sm">K8S</span>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">🏗️</div><span class="text-sm">Terraform</span>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">🤖</div><span class="text-sm">Ansible</span>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">🐳</div><span class="text-sm">Docker</span>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">💻</div><span class="text-sm">Bash</span>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">🔗</div><span class="text-sm">Git</span>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center justify-center min-w-[80px] transform transition hover:scale-110 hover:bg-gray-700">
+        <div class="text-2xl animate-bounce mb-1">🤹</div><span class="text-sm">Jenkins</span>
+      </div>
+    </div>
+
+    <!-- Explore Button -->
+    <a data-aos="fade-up" data-aos-delay="600" href="/projects.html"
+       class="mt-6 inline-block px-6 py-3 bg-blue-600 rounded-lg text-white font-semibold hover:bg-blue-500 transition">
+      🚀 Explore the Laboratory
+    </a>
+
   </main>
 
   <!-- Footer -->
