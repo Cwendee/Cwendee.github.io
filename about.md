@@ -21,11 +21,11 @@ Curiosity has always shaped how I work. Beyond following workflows, I focus on u
 <!-- Certifications -->
 <h2 class="text-xl font-medium mb-4 text-white" data-aos="fade-up" data-aos-delay="300">🎓 Certifications & Learning</h2>
 <div class="flex flex-wrap gap-4 mb-6" data-aos="fade-up" data-aos-delay="350">
-  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow hover:shadow-lg transition about-cert-card" data-aos="fade-up" data-aos-delay="360">🚀 AWS Solutions Architect Associate (SAA) ALX Africa | Nov 2025</div>
-  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow hover:shadow-lg transition about-cert-card" data-aos="fade-up" data-aos-delay="370">🛠️ Women Techsters Fellowship DevOps Engineering Track | 2025 – 2026</div>
-  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow hover:shadow-lg transition about-cert-card" data-aos="fade-up" data-aos-delay="380">☁️ AWS Certified Cloud Practitioner ALX Africa | June 2025</div>
-  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow hover:shadow-lg transition about-cert-card" data-aos="fade-up" data-aos-delay="390">⚙️ DevOps Engineering LearnWithPride Limited | Sept 2024</div>
-  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow hover:shadow-lg transition about-cert-card" data-aos="fade-up" data-aos-delay="400">🔐 Microsoft Learning Series Cybersecurity & Cloud | 2023 – 2024</div>
+  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow transition about-cert-card" data-aos="fade-up" data-aos-delay="360"><span class="emoji">☁️</span> AWS Solutions Architect Associate (SAA) ALX Africa | Nov 2025</div>
+  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow transition about-cert-card" data-aos="fade-up" data-aos-delay="370"><span class="emoji">🕹️</span> Women Techsters Fellowship DevOps Engineering Track | 2025 – 2026</div>
+  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow transition about-cert-card" data-aos="fade-up" data-aos-delay="380"><span class="emoji">☁️</span> AWS Certified Cloud Practitioner ALX Africa | June 2025</div>
+  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow transition about-cert-card" data-aos="fade-up" data-aos-delay="390"><span class="emoji">🏗️</span> DevOps Engineering LearnWithPride Limited | Sept 2024</div>
+  <div class="bg-gray-800 rounded-lg px-4 py-2 text-white shadow transition about-cert-card" data-aos="fade-up" data-aos-delay="400"><span class="emoji">🔐</span> Microsoft Learning Series Cybersecurity & Cloud | 2023 – 2024</div>
 </div>
 
 <!-- Experience -->
