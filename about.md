@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: about
 title: Resilience in Motion
 ---
 
