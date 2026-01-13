@@ -43,3 +43,4 @@ title: About
 <section class="mb-12" data-aos="fade-up" data-aos-delay="400">
   <p class="text-gray-200 italic">🌱 Continuously learning, building, and applying cloud and DevOps best practices.</p>
 </section>
+
