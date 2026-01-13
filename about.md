@@ -1,23 +1,23 @@
 ---
-layout: about
+layout: page
 title: About
 ---
 
-<section class="max-w-5xl mx-auto px-4 py-12" data-aos="fade-up">
+<section class="mb-12" data-aos="fade-up">
   <h2 class="text-2xl font-semibold text-gray-100 mb-2">The Evolution: Resilience in Motion</h2>
   <p class="text-gray-200 leading-relaxed">
     I didn’t begin my career with code; I began with people. As a Customer Service professional across health, e-commerce, and transportation & logistics, I have engaged customers in person, over the phone, and via email. These experiences sharpened my ability to think on my feet, solve problems in real time, and perform under pressure. The curiosity and drive for growth led me into Service Assurance at Red Star Express (FedEx), where I support operational excellence and reliable service delivery.
   </p>
 </section>
 
-<section class="max-w-5xl mx-auto px-4 py-12" data-aos="fade-up" data-aos-delay="100">
+<section class="mb-12" data-aos="fade-up" data-aos-delay="100">
   <h2 class="text-2xl font-semibold text-gray-100 mb-2">The Pivot: Driven by Curiosity</h2>
   <p class="text-gray-200 leading-relaxed">
     Curiosity has always shaped how I work. Beyond following workflows, I focus on understanding systems and how they can be optimized. This drive to explore the how and why led me into DevOps. As I transition into tech, I bring with me years of resilience, operational thinking, and a solution-first mindset applied to cloud environments.
   </p>
 </section>
 
-<section class="max-w-5xl mx-auto px-4 py-12" data-aos="fade-up" data-aos-delay="200">
+<section class="mb-12" data-aos="fade-up" data-aos-delay="200">
   <h2 class="text-2xl font-semibold text-gray-100 mb-4">🎓 Certifications & Learning</h2>
   <div class="flex flex-wrap gap-4">
     <div class="bg-gray-700 rounded-lg px-4 py-2 text-gray-200 hover:shadow-lg hover:shadow-blue-400 transition">🚀 AWS Solutions Architect Associate (SAA) ALX Africa | Nov 2025</div>
@@ -28,7 +28,7 @@ title: About
   </div>
 </section>
 
-<section class="max-w-5xl mx-auto px-4 py-12" data-aos="fade-up" data-aos-delay="300">
+<section class="mb-12" data-aos="fade-up" data-aos-delay="300">
   <h2 class="text-2xl font-semibold text-gray-100 mb-4">💼 Experience</h2>
   <div class="bg-gray-800 rounded-lg p-4 text-gray-200">
     <h3 class="font-semibold">AWS Technical Mentor (Volunteer) | Oct 2025 – Present</h3>
@@ -40,12 +40,6 @@ title: About
   </div>
 </section>
 
-<section class="max-w-5xl mx-auto px-4 py-12" data-aos="fade-up" data-aos-delay="400">
+<section class="mb-12" data-aos="fade-up" data-aos-delay="400">
   <p class="text-gray-200 italic">🌱 Continuously learning, building, and applying cloud and DevOps best practices.</p>
 </section>
-
-<footer class="max-w-5xl mx-auto px-4 py-8 flex justify-center gap-6">
-  <a href="https://github.com/Cwendee/" target="_blank" class="text-gray-200 hover:text-blue-400 transition"><img src="/assets/images/github-logo.png" alt="GitHub" class="h-6 w-6"></a>
-  <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank" class="text-gray-200 hover:text-blue-400 transition"><img src="/assets/images/linkedin-logo.png" alt="LinkedIn" class="h-6 w-6"></a>
-  <a href="mailto:pruddyanumudu@gmail.com" class="text-gray-200 hover:text-blue-400 transition"><img src="/assets/images/email-logo.png" alt="Email" class="h-6 w-6"></a>
-</footer>
