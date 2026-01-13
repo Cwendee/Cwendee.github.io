@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pruddieverse</title>
 
   <!-- Favicon -->
@@ -13,50 +13,131 @@
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="bg-[#0b132b] text-gray-200">
+<body class="bg-midnight text-gray-200">
 
-  <!-- NAV -->
-  <nav class="flex justify-between items-center px-10 py-6">
-    <a href="/" class="text-xl font-semibold">Pruddieverse</a>
-    <div class="space-x-6 text-sm">
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="/" class="text-xl font-semibold">Pruddieverse</a>
+  <div class="space-x-6 text-sm">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="flex flex-col items-center text-center mt-16 px-6" data-aos="fade-up">
+
+  <h1 class="text-4xl font-semibold mb-3">Building the Pruddieverse</h1>
+
+  <p class="max-w-2xl text-lg font-semibold text-gray-300 mb-10">
+    I don’t just solve technical problems, I bridge the gap between human needs and automated solutions.
+  </p>
+
+  <!-- HEADSHOT -->
+  <img
+    src="assets/images/headshot.jpg"
+    alt="Prudence Anumudu"
+    class="w-60 rounded-2xl shadow-xl mb-16"
+  />
+
+  <!-- SKILLS -->
+  <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="skill">☁️<span>AWS</span></div>
+    <div class="skill">🕹️<span>K8S</span></div>
+    <div class="skill">🏗️<span>Terraform</span></div>
+    <div class="skill">🤖<span>Ansible</span></div>
+    <div class="skill">🐳<span>Docker</span></div>
+    <div class="skill">&gt;_<span>Bash</span></div>
+    <div class="skill">🌿<span>Git</span></div>
+    <div class="skill">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jenkins_logo_with_title.svg/256px-Jenkins_logo_with_title.svg.png"
+           class="w-8 mb-1 grayscale invert">
+      <span>Jenkins</span>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="flex flex-col items-center text-center mt-20 px-6">
-    <h1 class="text-4xl font-semibold mb-4">Building the Pruddieverse</h1>
-    <p class="max-w-2xl text-lg font-medium text-gray-300">
-      I don’t just solve technical problems, I bridge the gap between human needs and automated solutions.
-    </p>
+  </div>
 
-    <!-- HEADSHOT -->
-    <img src="assets/images/headshot.jpg"
-         class="mt-10 w-56 h-auto rounded-2xl shadow-lg"
-         alt="Prudence Anumudu">
+  <!-- CTA -->
+  <a
+    href="projects.html"
+    class="px-8 py-4 bg-gray-700 rounded-xl
+           hover:shadow-[0_0_25px_#4cc9f0]
+           transition duration-300 mb-24">
+    🚀 Explore the Laboratory
+  </a>
 
-    <!-- CTA -->
-    <a href="projects.html"
-       class="mt-12 px-8 py-4 bg-gray-700 rounded-xl
-              hover:shadow-[0_0_20px_#4cc9f0]
-              transition duration-300">
-      🚀 Explore the Laboratory
-    </a>
-  </section>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="mt-32 pb-10 flex justify-center space-x-8 text-xl">
+<!-- FOOTER -->
+<footer class="flex flex-col items-center space-y-4 pb-10">
+
+  <div class="flex space-x-8 text-xl">
     <a href="https://github.com/Cwendee" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">LinkedIn</a>
     <a href="mailto:pruddyanumudu@gmail.com">Email</a>
-  </footer>
+  </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
+
+</footer>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: false });
+</script>
+
+<!-- SKILL CARD STYLES -->
+<style>
+  .skill {
+    background: #1c2541;
+    padding: 12px 18px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .skill:hover {
+    box-shadow: 0 0 18px #4cc9f0;
+    transform: translateY(-4px);
+  }
+
+  .skill span {
+    font-size: 0.75rem;
+  }
+
+  .skill > :first-child {
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+</style>
+
 </body>
 </html>
