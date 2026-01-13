@@ -115,3 +115,25 @@ title: Pruddieverse
   </div>
 
 </div>
+
+<!-- Jenkins Fix -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".skill-card span")
+      .forEach(card => {
+        if (card.textContent.includes("Jenkins")) {
+          card.previousElementSibling.classList.add("jenkins");
+        }
+      });
+  });
+</script>
+
+<!-- Apply hero-to-skills spacing -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const skillsGrid = document.querySelector(".grid");
+    if (skillsGrid) {
+      skillsGrid.classList.add("hero-spacing");
+    }
+  });
+</script>

@@ -2,42 +2,59 @@
    GLOBAL BACKGROUND
 ================================ */
 body {
-  background-color: #0b132b; /* navy midnight blue */
+  background-color: #0b132b !important; /* navy midnight blue */
   color: #e5e7eb;
 }
 
 /* ===============================
-   SKILLS CARD STYLING
+   SKILLS CARD — FORCE STYLE
 ================================ */
 .skill-card {
-  background-color: #1f2933;
+  background-color: #1f2933 !important;
   border-radius: 0.75rem;
-  padding: 0.75rem;
-  width: 110px;
-  height: 110px;
+  padding: 0.65rem;
+  width: 105px;
+  height: 105px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  transition: 
+  border: 1px solid transparent;
+
+  transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
-    border 0.3s ease;
+    border-color 0.3s ease;
 }
 
-/* Hover glow */
+/* FORCE hover glow */
 .skill-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 18px rgba(96, 165, 250, 0.7);
-  border: 1px solid #60a5fa;
+  transform: translateY(-4px) scale(1.04) !important;
+  box-shadow: 0 0 22px 4px rgba(96, 165, 250, 0.9) !important;
+  border-color: #60a5fa !important;
 }
 
-/* Click (active) glow */
+/* FORCE click glow */
 .skill-card:active {
-  box-shadow: 0 0 26px rgba(96, 165, 250, 1);
-  border: 1px solid #93c5fd;
+  box-shadow: 0 0 30px 6px rgba(147, 197, 253, 1) !important;
+  border-color: #93c5fd !important;
+}
+
+/* ===============================
+   ICONS
+================================ */
+.skill-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+  animation: soft-bounce 1.8s infinite ease-in-out;
+}
+
+/* Jenkins needs help */
+.skill-icon.jenkins {
+  color: #e5e7eb !important;
+  filter: none !important;
 }
 
 /* ===============================
@@ -48,24 +65,20 @@ body {
   50% { transform: translateY(-6px); }
 }
 
-.skill-icon {
-  font-size: 1.8rem;
-  animation: soft-bounce 2s infinite ease-in-out;
-}
-
 /* ===============================
    CTA CARD
 ================================ */
 .cta-card {
-  background-color: #2b3440;
+  background-color: #2b3440 !important;
   border-radius: 1rem;
   padding: 1rem;
-  transition: box-shadow 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .cta-card:hover {
-  box-shadow: 0 0 22px rgba(96, 165, 250, 0.8);
-  border: 1px solid #60a5fa;
+  box-shadow: 0 0 24px rgba(96, 165, 250, 0.8) !important;
+  border-color: #60a5fa !important;
 }
 
 /* ===============================
@@ -74,12 +87,25 @@ body {
 .footer-icon {
   width: 26px;
   height: 26px;
-  opacity: 0.85;
+  opacity: 0.9;
+  filter: brightness(1.4);
   transition: transform 0.2s ease, opacity 0.2s ease;
-  filter: brightness(1.2);
 }
 
 .footer-icon:hover {
   transform: scale(1.15);
   opacity: 1;
+}
+
+/* ===============================
+   HERO → SKILLS SPACING
+================================ */
+.hero-spacing {
+  margin-top: 3.5rem;   /* pushes skills lower */
+}
+
+@media (min-width: 1024px) {
+  .hero-spacing {
+    margin-top: 4.5rem; /* extra breathing room on desktop */
+  }
 }
