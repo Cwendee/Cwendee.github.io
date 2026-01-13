@@ -160,3 +160,15 @@ body {
 .jenkins-icon {
   filter: brightness(1.6) contrast(1.3);
 }
+
+/* ===============================
+   SKILL CARD EMOJI BOUNCE
+================================ */
+.skill-card .emoji {
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
