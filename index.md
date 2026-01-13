@@ -70,3 +70,48 @@ title: Pruddieverse
   </a>
 
 </div>
+
+<!-- Skills Section -->
+<div class="flex gap-4 justify-center mt-8 flex-wrap">
+
+  <div class="skill-card">
+    <div class="skill-icon">☁️</div>
+    <span>AWS</span>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🕹️</div>
+    <span>K8S</span>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🏗️</div>
+    <span>Terraform</span>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🤖</div>
+    <span>Ansible</span>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🐳</div>
+    <span>Docker</span>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">&gt;_</div>
+    <span>Bash</span>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">🌿</div>
+    <span>Git</span>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-icon">⚙️</div>
+    <span>Jenkins</span>
+  </div>
+
+</div>
