@@ -24,10 +24,18 @@
   <style>
     .project-card {
       transition: all 0.3s ease;
+      max-width: 420px;
     }
     .project-card:hover {
       box-shadow: 0 0 22px #4cc9f0;
       transform: translateY(-6px);
+    }
+    .cta span {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cta:hover span {
+      opacity: 1;
     }
   </style>
 </head>
@@ -57,42 +65,42 @@
     </p>
   </header>
 
-  <!-- REAL PROJECTS -->
-  <section class="grid sm:grid-cols-2 gap-6">
+  <!-- PROJECTS -->
+  <section class="grid sm:grid-cols-2 gap-8 justify-items-center">
 
     <!-- PROJECT 1 -->
-    <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between">
+    <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
       <div>
         <h2 class="text-xl font-semibold text-white mb-2">
           Automated Multi-Node Infrastructure (Ansible + AWS)
         </h2>
         <p class="text-gray-300 text-sm">
           Fully automated provisioning and configuration of a multi-node AWS
-          infrastructure using Ansible and Infrastructure as Code principles.
+          infrastructure using Ansible and Infrastructure as Code.
         </p>
       </div>
       <a
         href="projects/ansible-multinode.html"
-        class="text-glow text-sm mt-4">
-        Explore the raw build →
+        class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+        View full details <span>👉🏽</span>
       </a>
     </div>
 
     <!-- PROJECT 2 -->
-    <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between">
+    <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
       <div>
         <h2 class="text-xl font-semibold text-white mb-2">
           Multi-AZ Nginx Orchestration with Ansible (AWS)
         </h2>
         <p class="text-gray-300 text-sm">
-          Designed and automated a highly available Nginx infrastructure across
-          multiple AWS Availability Zones using Ansible.
+          Highly available Nginx infrastructure automated across multiple AWS
+          Availability Zones using Ansible.
         </p>
       </div>
       <a
         href="projects/multi-az-nginx.html"
-        class="text-glow text-sm mt-4">
-        Inspect the orchestration →
+        class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+        View full details <span>👉🏽</span>
       </a>
     </div>
 
@@ -100,19 +108,7 @@
 
 </main>
 
-<!-- FOOTER -->
 <footer class="flex flex-col items-center space-y-4 py-10">
-  <div class="flex space-x-8">
-    <a href="https://github.com/Cwendee" target="_blank">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="w-6 invert">
-    </a>
-    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" class="w-6 invert">
-    </a>
-    <a href="mailto:pruddyanumudu@gmail.com">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" class="w-6 invert">
-    </a>
-  </div>
   <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
 </footer>
 
