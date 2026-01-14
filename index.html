@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pruddieverse</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <script>
@@ -44,21 +40,22 @@
 <!-- HERO -->
 <section class="flex flex-col items-center text-center mt-16 px-6" data-aos="fade-up">
 
-  <h1 class="text-4xl font-semibold mb-3">Building the Pruddieverse</h1>
-
-  <p class="max-w-2xl text-lg font-semibold text-gray-300 mb-10">
-    I don’t just solve technical problems, I bridge the gap between human needs and automated solutions.
-  </p>
-
-  <!-- HEADSHOT -->
+  <!-- HEADSHOT FIRST -->
   <img
     src="assets/images/headshot.jpg"
     alt="Prudence Anumudu"
-    class="w-60 rounded-2xl shadow-xl mb-16"
+    class="w-60 rounded-2xl shadow-xl mb-10"
   />
 
+  <!-- TEXT UNDER HEADSHOT -->
+  <h1 class="text-3xl font-medium mb-2">Building the Pruddieverse</h1>
+
+  <p class="max-w-2xl text-lg font-semibold text-gray-300 mb-16">
+    I don’t just solve technical problems, I bridge the gap between human needs and automated solutions.
+  </p>
+
   <!-- SKILLS -->
-  <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="200">
+  <div class="flex flex-wrap justify-center gap-4 mb-20" data-aos="fade-up">
 
     <div class="skill">☁️<span>AWS</span></div>
     <div class="skill">🕹️<span>K8S</span></div>
@@ -67,6 +64,7 @@
     <div class="skill">🐳<span>Docker</span></div>
     <div class="skill">&gt;_<span>Bash</span></div>
     <div class="skill">🌿<span>Git</span></div>
+
     <div class="skill">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jenkins_logo_with_title.svg/256px-Jenkins_logo_with_title.svg.png"
            class="w-8 mb-1 grayscale invert">
@@ -89,54 +87,46 @@
 <!-- FOOTER -->
 <footer class="flex flex-col items-center space-y-4 pb-10">
 
-  <div class="flex space-x-8 text-xl">
-    <a href="https://github.com/Cwendee" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">LinkedIn</a>
-    <a href="mailto:pruddyanumudu@gmail.com">Email</a>
+  <div class="flex space-x-8">
+    <a href="https://github.com/Cwendee" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="w-6 invert">
+    </a>
+    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" class="w-6 invert">
+    </a>
+    <a href="mailto:pruddyanumudu@gmail.com">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" class="w-6 invert">
+    </a>
   </div>
 
   <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
-
 </footer>
 
-<!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ once: false });
-</script>
+<script>AOS.init({ once:false });</script>
 
-<!-- SKILL CARD STYLES -->
 <style>
-  .skill {
-    background: #1c2541;
-    padding: 12px 18px;
-    border-radius: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    font-size: 1.4rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .skill:hover {
-    box-shadow: 0 0 18px #4cc9f0;
-    transform: translateY(-4px);
-  }
-
-  .skill span {
-    font-size: 0.75rem;
-  }
-
-  .skill > :first-child {
-    animation: bounce 2s infinite;
-  }
-
-  @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
+.skill {
+  background:#1c2541;
+  padding:12px 18px;
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  font-size:1.4rem;
+  transition:0.3s;
+}
+.skill:hover {
+  box-shadow:0 0 18px #4cc9f0;
+  transform:translateY(-4px);
+}
+.skill span { font-size:0.75rem; }
+.skill > :first-child { animation:bounce 2s infinite; }
+@keyframes bounce {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
 </style>
 
 </body>
