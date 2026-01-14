@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pruddieverse</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -23,15 +21,46 @@
       }
     }
   </script>
+
+  <style>
+    /* Skill card */
+    .skill-card {
+      width: 120px;
+      height: 120px;
+      background: #1e293b;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill-card:hover {
+      box-shadow: 0 0 22px #4cc9f0;
+      transform: translateY(-6px);
+    }
+
+    /* Icon bounce */
+    .skill-icon {
+      font-size: 1.8rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
 </head>
 
 <body class="bg-midnight text-gray-200">
 
 <!-- NAV -->
 <nav class="flex justify-between items-center px-10 py-6">
-  <a href="index.html" class="text-white font-semibold text-xl">
-    Pruddieverse
-  </a>
+  <a href="index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
   <div class="space-x-6 text-sm">
     <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
     <a href="projects.html" class="text-gray-300 hover:text-white transition">Projects</a>
@@ -43,7 +72,6 @@
 <!-- HERO -->
 <section class="flex flex-col items-center text-center mt-20 px-6">
 
-  <!-- HEADSHOT (correct position) -->
   <img
     src="assets/images/headshot.jpg"
     alt="Prudence Anumudu"
@@ -54,22 +82,58 @@
     Building the Pruddieverse
   </h1>
 
-  <!-- ONLY COLOR CHANGE IS HERE -->
   <p class="max-w-2xl text-lg text-gray-300 mb-14">
     I don’t just solve technical problems, I bridge the gap between human needs
     and automated solutions.
   </p>
 
   <!-- SKILLS -->
-  <div class="flex flex-wrap justify-center gap-4 mb-16">
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">☁️ AWS</div>
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🕹️ K8S</div>
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🏗️ Terraform</div>
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🤖 Ansible</div>
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🐳 Docker</div>
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">&gt;_ Bash</div>
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🌿 Git</div>
-    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">Jenkins</div>
+  <div class="flex flex-wrap justify-center gap-6 mb-16">
+
+    <div class="skill-card">
+      <div class="skill-icon">☁️</div>
+      <span class="text-sm">AWS</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🕹️</div>
+      <span class="text-sm">K8S</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🏗️</div>
+      <span class="text-sm">Terraform</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <span class="text-sm">Ansible</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🐳</div>
+      <span class="text-sm">Docker</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">&gt;_</div>
+      <span class="text-sm">Bash</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🌿</div>
+      <span class="text-sm">Git</span>
+    </div>
+
+    <div class="skill-card">
+      <img
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg"
+        class="w-8 invert skill-icon"
+        alt="Jenkins"
+      />
+      <span class="text-sm">Jenkins</span>
+    </div>
+
   </div>
 
   <!-- CTA -->
