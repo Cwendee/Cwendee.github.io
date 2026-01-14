@@ -22,6 +22,19 @@
   </script>
 
   <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
     .cta {
       transition: all 0.3s ease;
     }
@@ -47,17 +60,68 @@
   </a>
 </nav>
 
-<main class="max-w-4xl mx-auto px-6 py-16 space-y-12">
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
 
   <header>
     <h1 class="text-3xl font-semibold text-white mb-3">
       Automated Multi-Node Infrastructure (Ansible + AWS)
     </h1>
-    <p class="text-gray-300">
-      Automated provisioning and configuration of a multi-node AWS infrastructure
-      using Ansible and Infrastructure as Code.
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+      Automated the provisioning and configuration of a multi-node web infrastructure on AWS using Ansible,
+      transitioning from manual setup to fully orchestrated Infrastructure as Code.
     </p>
+
+    <span class="badge">Completed</span>
   </header>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🎯 Problem & Objective</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Manual server configuration does not scale and often leads to inconsistencies.
+      This project demonstrates how configuration management enforces consistency,
+      idempotency, and scalability across multiple cloud servers.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🧠 What I Built</h2>
+    <ul class="space-y-2 text-gray-300 list-disc list-inside">
+      <li>Designed a 1-to-2 orchestration architecture where a single Ansible control node manages multiple EC2 instances</li>
+      <li>Automated installation and configuration of Apache (httpd) and Git</li>
+      <li>Deployed a professional Bootstrap-based portfolio theme directly from GitHub</li>
+      <li>Implemented regex-driven, case-insensitive configuration updates</li>
+      <li>Ensured idempotent playbook execution across all nodes</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🛠 Tools & Technologies</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">Ansible</span>
+      <span class="tag">AWS EC2</span>
+      <span class="tag">Apache (httpd)</span>
+      <span class="tag">Git</span>
+      <span class="tag">Linux</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Execution & Verification</h2>
+    <p class="text-gray-300">
+      Validated successful orchestration through Ansible playbook execution results
+      and confirmed live deployment by accessing the public DNS of managed EC2 instances.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">💡 Key Learnings</h2>
+    <p class="text-gray-300">
+      Secure SSH key-based communication between cloud instances, practical use of regex
+      in configuration automation, and applying security best practices by protecting
+      sensitive infrastructure details.
+    </p>
+  </section>
 
   <section>
     <a

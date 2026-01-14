@@ -22,6 +22,19 @@
   </script>
 
   <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
     .cta {
       transition: all 0.3s ease;
     }
@@ -47,17 +60,66 @@
   </a>
 </nav>
 
-<main class="max-w-4xl mx-auto px-6 py-16 space-y-12">
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
 
   <header>
     <h1 class="text-3xl font-semibold text-white mb-3">
       Multi-AZ Nginx Orchestration with Ansible (AWS)
     </h1>
-    <p class="text-gray-300">
-      Highly available Nginx infrastructure automated across multiple AWS
-      Availability Zones using Ansible.
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+      Designed and automated a highly available Nginx web infrastructure across
+      multiple AWS Availability Zones using Ansible.
     </p>
+
+    <span class="badge">Completed</span>
   </header>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🎯 Problem & Objective</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Single-zone deployments introduce availability risks and manual configurations
+      do not scale. This project demonstrates how automation and orchestration deliver
+      high availability, consistency, and reliability across distributed infrastructure.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🧠 What I Built</h2>
+    <ul class="space-y-2 text-gray-300 list-disc list-inside">
+      <li>Architected a Multi-AZ EC2 deployment to improve fault tolerance</li>
+      <li>Automated Nginx installation and configuration using Ansible</li>
+      <li>Orchestrated consistent configurations across all nodes from a central control host</li>
+      <li>Ensured idempotent playbook execution to maintain predictable infrastructure state</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🛠 Tools & Technologies</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">Ansible</span>
+      <span class="tag">AWS EC2</span>
+      <span class="tag">Nginx</span>
+      <span class="tag">Git</span>
+      <span class="tag">Linux</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Execution & Verification</h2>
+    <p class="text-gray-300">
+      Validated configuration success via Ansible playbook execution results and
+      confirmed service availability by accessing public DNS endpoints of managed instances.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">💡 Key Learnings</h2>
+    <p class="text-gray-300">
+      Secure SSH-based communication between distributed cloud nodes, practical automation
+      techniques for high-availability architectures, and infrastructure security best practices.
+    </p>
+  </section>
 
   <section>
     <a
