@@ -16,12 +16,35 @@
       theme: {
         extend: {
           colors: {
-            midnight: '#0b132b'
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
           }
         }
       }
     }
   </script>
+
+  <style>
+    /* Glow effect */
+    .glow-card {
+      transition: all 0.3s ease;
+    }
+    .glow-card:hover {
+      box-shadow: 0 0 20px #4cc9f0;
+      transform: translateY(-4px);
+    }
+
+    /* Emoji bounce */
+    .emoji-bounce {
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
 </head>
 
 <body class="bg-midnight text-gray-200 min-h-screen">
@@ -38,7 +61,7 @@
 </nav>
 
 <!-- CONTENT -->
-<main class="max-w-5xl mx-auto px-6 py-16 space-y-10">
+<main class="max-w-5xl mx-auto px-6 py-16 space-y-12">
 
   <section>
     <h2 class="text-2xl font-semibold mb-3">The Evolution: Resilience in Motion</h2>
@@ -63,21 +86,31 @@
   <section>
     <h2 class="text-2xl font-semibold mb-5">🎓 Certifications & Learning</h2>
     <div class="grid sm:grid-cols-2 gap-4">
-      <div class="bg-slate-800 rounded-xl p-4">🚀 AWS Solutions Architect Associate (SAA) — ALX Africa | Nov 2025</div>
-      <div class="bg-slate-800 rounded-xl p-4">🛠️ Women Techsters Fellowship DevOps Track | 2025 – 2026</div>
-      <div class="bg-slate-800 rounded-xl p-4">☁️ AWS Certified Cloud Practitioner — ALX Africa | June 2025</div>
-      <div class="bg-slate-800 rounded-xl p-4">⚙️ DevOps Engineering — LearnWithPride | Sept 2024</div>
-      <div class="bg-slate-800 rounded-xl p-4">🔐 Microsoft Cybersecurity & Cloud | 2023 – 2024</div>
+      <div class="glow-card bg-slate-800 rounded-xl p-4">
+        <span class="emoji-bounce">🚀</span> AWS Solutions Architect Associate (SAA) — ALX Africa | Nov 2025
+      </div>
+      <div class="glow-card bg-slate-800 rounded-xl p-4">
+        <span class="emoji-bounce">🛠️</span> Women Techsters Fellowship DevOps Track | 2025 – 2026
+      </div>
+      <div class="glow-card bg-slate-800 rounded-xl p-4">
+        <span class="emoji-bounce">☁️</span> AWS Certified Cloud Practitioner — ALX Africa | June 2025
+      </div>
+      <div class="glow-card bg-slate-800 rounded-xl p-4">
+        <span class="emoji-bounce">⚙️</span> DevOps Engineering — LearnWithPride | Sept 2024
+      </div>
+      <div class="glow-card bg-slate-800 rounded-xl p-4">
+        <span class="emoji-bounce">🔐</span> Microsoft Cybersecurity & Cloud | 2023 – 2024
+      </div>
     </div>
   </section>
 
   <section>
     <h2 class="text-2xl font-semibold mb-3">💼 Experience</h2>
-    <p class="font-medium mb-2">AWS Technical Mentor (Volunteer) | Oct 2025 – Present</p>
-    <ul class="list-disc list-inside text-gray-300 space-y-1">
-      <li>Mentoring learners on AWS fundamentals and cloud concepts</li>
-      <li>Supporting labs, hands-on projects, and best practices</li>
-      <li>Contributing to community-driven learning and skill growth</li>
+    <p class="font-medium mb-3">AWS Technical Mentor (Volunteer) | Oct 2025 – Present</p>
+    <ul class="space-y-2 text-gray-300">
+      <li><span class="emoji-bounce">🤝</span> Mentoring learners on AWS fundamentals and cloud concepts</li>
+      <li><span class="emoji-bounce">📘</span> Supporting labs, hands-on projects, and best practices</li>
+      <li><span class="emoji-bounce">🌱</span> Contributing to community-driven learning and skill growth</li>
     </ul>
   </section>
 
