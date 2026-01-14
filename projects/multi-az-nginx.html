@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-AZ Nginx Orchestration | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .cta {
+      transition: all 0.3s ease;
+    }
+    .cta:hover {
+      box-shadow: 0 0 25px #4cc9f0;
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../projects.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Laboratory
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
+
+  <header>
+    <h1 class="text-3xl font-semibold text-white mb-3">
+      Multi-AZ Nginx Orchestration with Ansible (AWS)
+    </h1>
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+      Designed and automated a highly available Nginx web infrastructure across
+      multiple AWS Availability Zones using Ansible.
+    </p>
+
+    <span class="badge">Completed</span>
+  </header>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">Problem & Objective</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Single-zone deployments introduce availability risks and manual configurations
+      do not scale. This project demonstrates how automation delivers high availability,
+      consistency, and reliability across distributed infrastructure.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">What I Built</h2>
+    <div class="space-y-3 text-gray-300">
+      <p>• Architected a Multi-AZ EC2 deployment to improve fault tolerance</p>
+      <p>• Automated Nginx installation and configuration using Ansible</p>
+      <p>• Orchestrated consistent configurations across all nodes from a central control host</p>
+      <p>• Ensured idempotent playbook execution for predictable infrastructure state</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">Tools & Technologies</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">Ansible</span>
+      <span class="tag">AWS EC2</span>
+      <span class="tag">Nginx</span>
+      <span class="tag">Git</span>
+      <span class="tag">Linux</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">Execution & Verification</h2>
+    <p class="text-gray-300">
+      Configuration success was validated through Ansible playbook execution results
+      and confirmed by accessing the public DNS endpoints of managed instances.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">Key Learnings</h2>
+    <p class="text-gray-300">
+      Secure SSH-based communication, practical automation techniques for
+      high-availability architectures, and infrastructure security best practices.
+    </p>
+  </section>
+
+  <section>
+    <a
+      href="https://github.com/Cwendee/multi-az-nginx-orchestration"
+      target="_blank"
+      class="cta inline-block bg-gray-700 px-6 py-4 rounded-xl text-white">
+      Inspect the orchestration →
+    </a>
+  </section>
+
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © 2025 Prudence Anumudu
+</footer>
+
+</body>
+</html>
