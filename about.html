@@ -1,50 +1,107 @@
----
-layout: page
-title: About
-permalink: /about/
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<section class="max-w-5xl mx-auto px-6 py-16 text-slate-200">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <h2 class="text-2xl font-semibold mb-4">The Evolution: Resilience in Motion</h2>
-  <p class="text-slate-300 leading-relaxed mb-10">
-    I didn’t begin my career with code; I began with people. As a Customer Service professional across health, e-commerce,
-    and transportation & logistics, I have engaged customers in person, over the phone, and via email. These experiences
-    sharpened my ability to think on my feet, solve problems in real time, and perform under pressure. The curiosity and
-    drive for growth led me into Service Assurance at Red Star Express (FedEx), where I support operational excellence and
-    reliable service delivery.
-  </p>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-  <h2 class="text-2xl font-semibold mb-4">The Pivot: Driven by Curiosity</h2>
-  <p class="text-slate-300 leading-relaxed mb-12">
-    Curiosity has always shaped how I work. Beyond following workflows, I focus on understanding systems and how they can
-    be optimized. This drive to explore the how and why led me into DevOps. As I transition into tech, I bring with me
-    years of resilience, operational thinking, and a solution-first mindset applied to cloud environments.
-  </p>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
 
-  <h3 class="text-xl font-semibold mb-6">🎓 Certifications & Learning</h3>
+<body class="bg-midnight text-gray-200 min-h-screen">
 
-  <div class="grid sm:grid-cols-2 gap-4 mb-14">
-    <div class="bg-slate-800 rounded-xl px-4 py-3">🚀 AWS Solutions Architect Associate (SAA) — ALX Africa | Nov 2025</div>
-    <div class="bg-slate-800 rounded-xl px-4 py-3">🛠️ Women Techsters Fellowship (DevOps) | 2025–2026</div>
-    <div class="bg-slate-800 rounded-xl px-4 py-3">☁️ AWS Cloud Practitioner — ALX Africa | June 2025</div>
-    <div class="bg-slate-800 rounded-xl px-4 py-3">⚙️ DevOps Engineering — LearnWithPride | Sept 2024</div>
-    <div class="bg-slate-800 rounded-xl px-4 py-3">🔐 Microsoft Cybersecurity & Cloud | 2023–2024</div>
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="index.html" class="text-xl font-semibold">Pruddieverse</a>
+  <div class="space-x-6 text-sm">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
   </div>
+</nav>
 
-  <h3 class="text-xl font-semibold mb-4">💼 Experience</h3>
+<!-- CONTENT -->
+<main class="max-w-5xl mx-auto px-6 py-16 space-y-10">
 
-  <div class="bg-slate-800 rounded-xl px-5 py-4 mb-6">
-    <p class="font-medium">AWS Technical Mentor (Volunteer) | Oct 2025 – Present</p>
-    <ul class="list-disc list-inside text-slate-300 mt-2 space-y-1">
+  <section>
+    <h2 class="text-2xl font-semibold mb-3">The Evolution: Resilience in Motion</h2>
+    <p class="text-gray-300 leading-relaxed">
+      I didn’t begin my career with code; I began with people. As a Customer Service professional across health,
+      e-commerce, and transportation & logistics, I have engaged customers in person, over the phone, and via email.
+      These experiences sharpened my ability to think on my feet, solve problems in real time, and perform under pressure.
+      The curiosity and drive for growth led me into Service Assurance at Red Star Express (FedEx), where I support
+      operational excellence and reliable service delivery.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-semibold mb-3">The Pivot: Driven by Curiosity</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Curiosity has always shaped how I work. Beyond following workflows, I focus on understanding systems and how they
+      can be optimized. This drive to explore the how and why led me into DevOps. As I transition into tech, I bring with
+      me years of resilience, operational thinking, and a solution-first mindset applied to cloud environments.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-semibold mb-5">🎓 Certifications & Learning</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-slate-800 rounded-xl p-4">🚀 AWS Solutions Architect Associate (SAA) — ALX Africa | Nov 2025</div>
+      <div class="bg-slate-800 rounded-xl p-4">🛠️ Women Techsters Fellowship DevOps Track | 2025 – 2026</div>
+      <div class="bg-slate-800 rounded-xl p-4">☁️ AWS Certified Cloud Practitioner — ALX Africa | June 2025</div>
+      <div class="bg-slate-800 rounded-xl p-4">⚙️ DevOps Engineering — LearnWithPride | Sept 2024</div>
+      <div class="bg-slate-800 rounded-xl p-4">🔐 Microsoft Cybersecurity & Cloud | 2023 – 2024</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-semibold mb-3">💼 Experience</h2>
+    <p class="font-medium mb-2">AWS Technical Mentor (Volunteer) | Oct 2025 – Present</p>
+    <ul class="list-disc list-inside text-gray-300 space-y-1">
       <li>Mentoring learners on AWS fundamentals and cloud concepts</li>
       <li>Supporting labs, hands-on projects, and best practices</li>
       <li>Contributing to community-driven learning and skill growth</li>
     </ul>
-  </div>
+  </section>
 
-  <p class="text-slate-400">
+  <p class="text-gray-400">
     🌱 Continuously learning, building, and applying cloud and DevOps best practices.
   </p>
 
-</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="flex flex-col items-center space-y-4 py-10">
+  <div class="flex space-x-8">
+    <a href="https://github.com/Cwendee" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="w-6 invert">
+    </a>
+    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" class="w-6 invert">
+    </a>
+    <a href="mailto:pruddyanumudu@gmail.com">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" class="w-6 invert">
+    </a>
+  </div>
+  <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
+</footer>
+
+</body>
+</html>
