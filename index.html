@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pruddieverse</title>
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -25,6 +27,7 @@
 
 <body class="bg-midnight text-gray-200">
 
+<!-- NAV -->
 <nav class="flex justify-between items-center px-10 py-6">
   <a href="index.html" class="text-white font-semibold text-xl">
     Pruddieverse
@@ -37,28 +40,62 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="flex flex-col items-center text-center mt-20 px-6">
+
+  <!-- HEADSHOT (correct position) -->
+  <img
+    src="assets/images/headshot.jpg"
+    alt="Prudence Anumudu"
+    class="w-60 rounded-2xl shadow-xl mb-10"
+  />
 
   <h1 class="text-4xl font-semibold text-white mb-4">
     Building the Pruddieverse
   </h1>
 
-  <p class="max-w-2xl text-lg text-gray-300 mb-12">
+  <!-- ONLY COLOR CHANGE IS HERE -->
+  <p class="max-w-2xl text-lg text-gray-300 mb-14">
     I don’t just solve technical problems, I bridge the gap between human needs
     and automated solutions.
   </p>
 
-  <img
-    src="assets/images/headshot.jpg"
-    alt="Prudence Anumudu"
-    class="w-60 rounded-2xl shadow-xl mb-16"
-  />
+  <!-- SKILLS -->
+  <div class="flex flex-wrap justify-center gap-4 mb-16">
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">☁️ AWS</div>
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🕹️ K8S</div>
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🏗️ Terraform</div>
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🤖 Ansible</div>
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🐳 Docker</div>
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">&gt;_ Bash</div>
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">🌿 Git</div>
+    <div class="bg-slate-800 rounded-xl px-5 py-4 hover:shadow-[0_0_18px_#4cc9f0] transition">Jenkins</div>
+  </div>
 
-  <!-- Skills and CTA remain unchanged -->
+  <!-- CTA -->
+  <a
+    href="projects.html"
+    class="px-8 py-4 bg-gray-700 rounded-xl
+           hover:shadow-[0_0_25px_#4cc9f0]
+           transition duration-300 mb-24">
+    🚀 Explore the Laboratory
+  </a>
 
 </section>
 
+<!-- FOOTER -->
 <footer class="flex flex-col items-center space-y-4 py-10">
+  <div class="flex space-x-8">
+    <a href="https://github.com/Cwendee" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="w-6 invert">
+    </a>
+    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" class="w-6 invert">
+    </a>
+    <a href="mailto:pruddyanumudu@gmail.com">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" class="w-6 invert">
+    </a>
+  </div>
   <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
 </footer>
 
