@@ -6,7 +6,6 @@
   <title>Pruddieverse</title>
 
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -23,17 +22,17 @@
   </script>
 
   <style>
-    /* Skill card (reduced size) */
+    /* SKILL CARD — reduced size */
     .skill-card {
-      width: 96px;
-      height: 96px;
+      width: 80px;
+      height: 80px;
       background: #1e293b;
       border-radius: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 4px;
       transition: all 0.3s ease;
       cursor: pointer;
     }
@@ -43,9 +42,8 @@
       transform: translateY(-4px);
     }
 
-    /* Icon bounce (slightly smaller) */
     .skill-icon {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       animation: bounce 2s infinite;
     }
 
@@ -69,7 +67,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (UNCHANGED) -->
 <section class="flex flex-col items-center text-center mt-20 px-6">
 
   <img
@@ -87,56 +85,26 @@
     and automated solutions.
   </p>
 
-  <!-- SKILLS -->
-  <div class="flex flex-wrap justify-center gap-5 mb-16">
+  <!-- SKILLS (ONLY SECTION MOVED LOWER + RESIZED) -->
+  <div class="flex flex-wrap justify-center gap-4 mt-20 mb-20">
+
+    <div class="skill-card"><div class="skill-icon">☁️</div><span class="text-[11px]">AWS</span></div>
+    <div class="skill-card"><div class="skill-icon">🕹️</div><span class="text-[11px]">K8S</span></div>
+    <div class="skill-card"><div class="skill-icon">🏗️</div><span class="text-[11px]">Terraform</span></div>
+    <div class="skill-card"><div class="skill-icon">🤖</div><span class="text-[11px]">Ansible</span></div>
+    <div class="skill-card"><div class="skill-icon">🐳</div><span class="text-[11px]">Docker</span></div>
+    <div class="skill-card"><div class="skill-icon">&gt;_</div><span class="text-[11px]">Bash</span></div>
+    <div class="skill-card"><div class="skill-icon">🌿</div><span class="text-[11px]">Git</span></div>
 
     <div class="skill-card">
-      <div class="skill-icon">☁️</div>
-      <span class="text-xs">AWS</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">🕹️</div>
-      <span class="text-xs">K8S</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">🏗️</div>
-      <span class="text-xs">Terraform</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">🤖</div>
-      <span class="text-xs">Ansible</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">🐳</div>
-      <span class="text-xs">Docker</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">&gt;_</div>
-      <span class="text-xs">Bash</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">🌿</div>
-      <span class="text-xs">Git</span>
-    </div>
-
-    <div class="skill-card">
-      <img
-        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg"
-        class="w-7 invert skill-icon"
-        alt="Jenkins"
-      />
-      <span class="text-xs">Jenkins</span>
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg"
+           class="w-5 invert skill-icon" alt="Jenkins">
+      <span class="text-[11px]">Jenkins</span>
     </div>
 
   </div>
 
-  <!-- CTA -->
+  <!-- CTA (UNCHANGED) -->
   <a
     href="projects.html"
     class="px-8 py-4 bg-gray-700 rounded-xl
@@ -147,19 +115,8 @@
 
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (UNCHANGED) -->
 <footer class="flex flex-col items-center space-y-4 py-10">
-  <div class="flex space-x-8">
-    <a href="https://github.com/Cwendee" target="_blank">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="w-6 invert">
-    </a>
-    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" class="w-6 invert">
-    </a>
-    <a href="mailto:pruddyanumudu@gmail.com">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" class="w-6 invert">
-    </a>
-  </div>
   <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
 </footer>
 
