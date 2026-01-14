@@ -23,35 +23,35 @@
   </script>
 
   <style>
-    /* Skill card */
+    /* Skill card (reduced size) */
     .skill-card {
-      width: 120px;
-      height: 120px;
+      width: 96px;
+      height: 96px;
       background: #1e293b;
-      border-radius: 18px;
+      border-radius: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.3s ease;
       cursor: pointer;
     }
 
     .skill-card:hover {
-      box-shadow: 0 0 22px #4cc9f0;
-      transform: translateY(-6px);
+      box-shadow: 0 0 20px #4cc9f0;
+      transform: translateY(-4px);
     }
 
-    /* Icon bounce */
+    /* Icon bounce (slightly smaller) */
     .skill-icon {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       animation: bounce 2s infinite;
     }
 
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+      50% { transform: translateY(-5px); }
     }
   </style>
 </head>
@@ -88,50 +88,50 @@
   </p>
 
   <!-- SKILLS -->
-  <div class="flex flex-wrap justify-center gap-6 mb-16">
+  <div class="flex flex-wrap justify-center gap-5 mb-16">
 
     <div class="skill-card">
       <div class="skill-icon">☁️</div>
-      <span class="text-sm">AWS</span>
+      <span class="text-xs">AWS</span>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">🕹️</div>
-      <span class="text-sm">K8S</span>
+      <span class="text-xs">K8S</span>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">🏗️</div>
-      <span class="text-sm">Terraform</span>
+      <span class="text-xs">Terraform</span>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">🤖</div>
-      <span class="text-sm">Ansible</span>
+      <span class="text-xs">Ansible</span>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">🐳</div>
-      <span class="text-sm">Docker</span>
+      <span class="text-xs">Docker</span>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">&gt;_</div>
-      <span class="text-sm">Bash</span>
+      <span class="text-xs">Bash</span>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">🌿</div>
-      <span class="text-sm">Git</span>
+      <span class="text-xs">Git</span>
     </div>
 
     <div class="skill-card">
       <img
         src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg"
-        class="w-8 invert skill-icon"
+        class="w-7 invert skill-icon"
         alt="Jenkins"
       />
-      <span class="text-sm">Jenkins</span>
+      <span class="text-xs">Jenkins</span>
     </div>
 
   </div>
