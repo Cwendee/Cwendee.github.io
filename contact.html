@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .contact-card {
+      width: 120px;
+      height: 120px;
+      background: #1e293b;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      box-shadow: 0 0 25px #4cc9f0;
+      transform: translateY(-6px);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <div class="space-x-6 text-sm">
+    <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
+    <a href="projects.html" class="text-gray-300 hover:text-white transition">Projects</a>
+    <a href="blog.html" class="text-gray-300 hover:text-white transition">Blog</a>
+    <a href="contact.html" class="text-white font-semibold">Contact</a>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="flex flex-col items-center justify-center text-center px-6 py-32">
+
+  <h1 class="text-3xl font-semibold text-white mb-4">
+    Get In Touch
+  </h1>
+
+  <p class="max-w-xl text-gray-300 mb-16">
+    Open to conversations around DevOps, cloud architecture, collaboration,
+    or mentorship. Feel free to reach out through any of the platforms below.
+  </p>
+
+  <!-- CONTACT CARDS -->
+  <div class="flex flex-wrap justify-center gap-10">
+
+    <!-- LinkedIn -->
+    <a
+      href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/"
+      target="_blank"
+      class="contact-card">
+      <div class="contact-icon">💼</div>
+      <span class="text-sm">LinkedIn</span>
+    </a>
+
+    <!-- GitHub -->
+    <a
+      href="https://github.com/Cwendee/"
+      target="_blank"
+      class="contact-card">
+      <div class="contact-icon">🧠</div>
+      <span class="text-sm">GitHub</span>
+    </a>
+
+    <!-- Email -->
+    <a
+      href="mailto:pruddyanumudu@gmail.com"
+      class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <span class="text-sm">Email</span>
+    </a>
+
+  </div>
+
+</main>
+
+</body>
+</html>
