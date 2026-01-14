@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .note-card {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .note-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px rgba(76, 201, 240, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <div class="space-x-6 text-sm">
+    <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
+    <a href="projects.html" class="text-gray-300 hover:text-white transition">Projects</a>
+    <a href="blog.html" class="text-white font-semibold">Blog</a>
+    <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="max-w-5xl mx-auto px-6 py-24">
+
+  <!-- HEADER -->
+  <header class="mb-20">
+    <h1 class="text-3xl font-semibold text-white mb-4">
+      Inside the Pruddieverse: Notes & Experiments
+    </h1>
+    <p class="text-gray-400 max-w-2xl">
+      Short reflections, experiments, and lessons learned while building and
+      operating cloud systems.
+    </p>
+  </header>
+
+  <!-- PLACEHOLDER NOTES -->
+  <section class="grid sm:grid-cols-2 gap-8">
+
+    <div class="note-card">
+      <h2 class="text-lg font-medium text-white mb-2">
+        🧪 What I learned automating infrastructure with Ansible
+      </h2>
+      <p class="text-sm text-gray-400">
+        A reflection on orchestration patterns, mistakes, and lessons from
+        automating real infrastructure.
+      </p>
+    </div>
+
+    <div class="note-card">
+      <h2 class="text-lg font-medium text-white mb-2">
+        ⚙️ Debugging idempotency issues in real-world playbooks
+      </h2>
+      <p class="text-sm text-gray-400">
+        Notes on why “it works once” is not good enough, and how idempotency
+        changes how you think.
+      </p>
+    </div>
+
+    <div class="note-card">
+      <h2 class="text-lg font-medium text-white mb-2">
+        ☁️ Notes on designing for failure in cloud systems
+      </h2>
+      <p class="text-sm text-gray-400">
+        Early thoughts on resilience, redundancy, and why failure should be
+        assumed—not feared.
+      </p>
+    </div>
+
+    <div class="note-card">
+      <h2 class="text-lg font-medium text-white mb-2">
+        🔐 Security lessons I wish I knew earlier
+      </h2>
+      <p class="text-sm text-gray-400">
+        Practical security insights picked up through hands-on work and
+        real-world scenarios.
+      </p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="flex flex-col items-center space-y-4 py-10">
+  <div class="flex space-x-8">
+    <a href="https://github.com/Cwendee" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="w-6 invert">
+    </a>
+    <a href="https://www.linkedin.com/in/prudence-c-anumudu-35518656/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" class="w-6 invert">
+    </a>
+    <a href="mailto:pruddyanumudu@gmail.com">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" class="w-6 invert">
+    </a>
+  </div>
+  <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
+</footer>
+
+</body>
+</html>
