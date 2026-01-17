@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terraform AWS ECS Fargate Infrastructure | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .cta {
+      transition: all 0.3s ease;
+    }
+    .cta span {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cta:hover {
+      box-shadow: 0 0 25px #4cc9f0;
+    }
+    .cta:hover span {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../projects.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Laboratory
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
+
+  <header>
+    <h1 class="text-3xl font-semibold text-white mb-3">
+      Terraform AWS ECS Fargate Infrastructure
+    </h1>
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+  Designed and provisioned a production-style container infrastructure on AWS
+  using Terraform, ECS Fargate, and an Application Load Balancer, following
+  real-world DevOps and cloud architecture best practices.
+</p>
+
+
+    <span class="badge">Completed</span>
+  </header>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🎯 Problem & Objective</h2>
+    <p class="text-gray-300 leading-relaxed">
+  The challenge was to deploy a containerized application that balances security,
+  simplicity, and scalability while remaining fully reproducible using
+  Infrastructure as Code. The objective was to expose the application securely
+  through a load balancer, keep compute resources private, reduce operational
+  overhead, and ensure the infrastructure could be reliably created, modified,
+  and destroyed.
+</p>
+
+  </section>
+
+  <section>
+  <h2 class="text-xl font-semibold text-white mb-4">🏗️ High-Level Architecture</h2>
+  <p class="text-gray-300 leading-relaxed">
+    The architecture follows a layered and modular approach that separates
+    networking, load balancing, and compute responsibilities. A VPC provides
+    clearly defined public and private subnets, with the Application Load
+    Balancer acting as the sole public entry point. ECS Fargate tasks run
+    privately within the VPC, ensuring controlled traffic flow and reduced
+    attack surface.
+  </p>
+</section>
+  <h2 class="text-xl font-semibold text-white mb-4">🧠 Key Design Decisions</h2>
+
+  <div class="space-y-6 text-gray-300 leading-relaxed">
+
+    <p>
+      The following design decisions were made to align the infrastructure with
+      modern, production-style cloud and DevOps best practices.
+    </p>
+
+    <ul class="space-y-3 list-disc list-inside">
+      <li>
+        <strong>ECS Fargate:</strong> Selected to remove the need for EC2 instance
+        and host management, allowing focus on infrastructure design and
+        container orchestration rather than server maintenance.
+      </li>
+
+      <li>
+        <strong>Private Subnets for ECS Tasks:</strong> Containers are deployed in
+        private subnets to reduce the attack surface. All inbound traffic is
+        routed through the Application Load Balancer, enforcing a clear network
+        boundary.
+      </li>
+
+      <li>
+        <strong>Terraform Modules:</strong> Infrastructure components such as VPC,
+        ALB, and ECS were isolated into modules to improve reusability, simplify
+        debugging, and maintain separation of concerns.
+      </li>
+
+      <li>
+        <strong>Remote State Management:</strong> Terraform remote state was
+        configured to ensure state persistence, prevent drift, and support safe
+        iteration and collaboration.
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🛠 Tools & Technologies</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">Terraform</span>
+<span class="tag">AWS ECS Fargate</span>
+<span class="tag">Application Load Balancer</span>
+<span class="tag">VPC</span>
+<span class="tag">IAM</span>
+<span class="tag">Amazon S3</span>
+<span class="tag">Git</span>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Execution & Verification</h2>
+    <p class="text-gray-300 leading-relaxed">
+    The infrastructure was built incrementally, starting with the networking
+    layer, followed by the Application Load Balancer, and finally the ECS
+    Fargate resources. Each layer was validated independently before proceeding,
+    reducing risk and avoiding large, error-prone deployments.
+  </p>
+
+  </section>
+
+  <section>
+  <h2 class="text-xl font-semibold text-white mb-4">🚧 Challenges Faced</h2>
+  <p class="text-gray-300 leading-relaxed">
+    Challenges included understanding Terraform module boundaries versus
+    environment execution, early misconfiguration of remote state, IAM profile
+    confusion across sessions, and file path issues when structuring modules.
+    These issues reinforced the importance of execution context and structure
+    in Infrastructure as Code.
+  </p>
+</section>
+
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">💡 Key Learnings</h2>
+    <div class="space-y-6 text-gray-300 leading-relaxed">
+
+    <p>
+      This project reinforced several core DevOps and cloud engineering principles
+      that closely mirror real production experiences.
+    </p>
+
+    <ul class="space-y-3 list-disc list-inside">
+      <li>
+        Clear Terraform module boundaries significantly improve infrastructure
+        scalability, readability, and long-term maintainability.
+      </li>
+
+      <li>
+        Terraform execution context is just as important as the code itself.
+        Running commands from the correct directory and environment prevents
+        unexpected behavior and configuration issues.
+      </li>
+
+      <li>
+        Incremental validation during infrastructure builds saves time and
+        reduces cognitive load compared to large, single-step deployments.
+      </li>
+
+      <li>
+        Cost awareness should influence architectural decisions early, especially
+        when designing networking and managed service components.
+      </li>
+
+      <li>
+        Small configuration details such as file paths, remote state handling,
+        and AWS profiles can have a large operational impact if misconfigured.
+      </li>
+    </ul>
+
+  </div>
+
+  </section>
+
+  <section>
+  <h2 class="text-xl font-semibold text-white mb-4">✅ Outcome and Final Result</h2>
+
+  <div class="space-y-4 text-gray-300 leading-relaxed">
+    <p>
+      The final result is a fully functional ECS Fargate service running in
+      private subnets and receiving traffic exclusively through an Application
+      Load Balancer.
+    </p>
+
+    <p>
+      The infrastructure is modular, reproducible, and safely managed through
+      Terraform remote state, allowing it to be created, modified, or destroyed
+      with confidence.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2 class="text-xl font-semibold text-white mb-4">🔮 Future Improvements</h2>
+  <ul class="space-y-2 text-gray-300 list-disc list-inside">
+    <li>HTTPS termination using ACM</li>
+    <li>ECS service autoscaling policies</li>
+    <li>CI/CD pipeline for automated deployments</li>
+    <li>Blue-green deployment strategies</li>
+    <li>Enhanced monitoring and alerting</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="text-xl font-semibold text-white mb-4">🚫 Git LFS & Terraform Providers</h2>
+  <p class="text-gray-300 leading-relaxed">
+    GitHub suggested Git Large File Storage due to the size of Terraform provider
+    binaries. However, provider binaries should never be versioned. The correct
+    practice is to exclude the .terraform directory and allow Terraform to
+    download providers dynamically during initialization, keeping repositories
+    lightweight and portable.
+  </p>
+</section>
+
+<section>
+  <h2 class="text-xl font-semibold text-white mb-4">✨ Closing Reflection</h2>
+  <p class="text-gray-300 leading-relaxed">
+    This project strengthened my confidence in designing cloud infrastructure
+    using Terraform and reinforced the importance of clarity, structure, and
+    incremental delivery. It reflects a growing DevOps mindset focused on
+    building systems that are secure, reliable, and maintainable.
+  </p>
+</section>
+
+
+  <section>
+    <a
+      href="https://github.com/Cwendee/terraform-aws-ecs-fargate-infra"
+      target="_blank"
+      class="cta inline-flex items-center gap-2 bg-gray-700 px-6 py-4 rounded-xl text-white">
+      Explore the raw build <span>👉🏽</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © 2025 Prudence Anumudu
+</footer>
+
+</body>
+</html>
