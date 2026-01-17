@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>From Terraform Confusion to Clarity | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../blog.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Blog
+  </a>
+</nav>
+
+<!-- CONTENT -->
+<main class="max-w-3xl mx-auto px-6 py-16 space-y-14">
+
+  <!-- HEADER -->
+  <header class="space-y-4">
+    <h1 class="text-3xl font-semibold text-white">
+      📝 From Terraform Confusion to Clarity
+    </h1>
+    <p class="text-gray-400">
+      What Building a Real ECS Fargate Project Taught Me
+    </p>
+  </header>
+
+  <!-- SECTION 1 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white">1️⃣ The Confusion That Started It All</h2>
+    <p>At the beginning, Terraform felt familiar.</p>
+    <p>
+      I had already used Terraform to create a VPC, EC2 instances, ECS resources,
+      and everything worked. During one class, the tutor said the next step would
+      be creating Terraform modules.
+    </p>
+    <p>That confused me.</p>
+    <p>I had multiple <code>.tf</code> files. Terraform was working.</p>
+    <p><em>So I thought, are these not already modules?</em></p>
+    <p>
+      That question stayed with me until I tried to build a real project on my own.
+    </p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white">2️⃣ What I Was Actually Doing</h2>
+    <p>
+      What I later understood is that I was working inside a single root module.
+    </p>
+
+    <ul class="list-disc list-inside space-y-2">
+      <li>Multiple <code>.tf</code> files</li>
+      <li>Resources grouped by purpose</li>
+      <li>A setup that worked for learning</li>
+    </ul>
+
+    <p>
+      Terraform treats all <code>.tf</code> files in the same folder as one unit.
+      That is why everything worked.
+    </p>
+
+    <p>But this approach does not scale well.</p>
+
+    <ul class="list-disc list-inside space-y-2">
+      <li>There was no clean separation</li>
+      <li>Everything depended on everything</li>
+      <li>Reusing parts was difficult</li>
+      <li>Managing environments would have been risky</li>
+    </ul>
+
+    <p>It worked, but it was fragile.</p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white">3️⃣ The Aha Moment 💡</h2>
+    <p>
+      The big realization came when I understood the difference between a root
+      module and child modules.
+    </p>
+
+    <ul class="list-disc list-inside space-y-2">
+      <li>The root module is where Terraform runs</li>
+      <li>Child modules are reusable building blocks</li>
+      <li>Modules accept inputs</li>
+      <li>Modules expose outputs</li>
+      <li>Modules define responsibility boundaries</li>
+    </ul>
+
+    <p>
+      Once I separated networking, load balancing, and compute into modules,
+      things started to click.
+    </p>
+
+    <p>
+      I also understood why environment separation matters. Development and
+      production should not share the same execution context or state.
+    </p>
+
+    <p>This was no longer about syntax. It was about design.</p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white">4️⃣ Why This Matters in Real Projects</h2>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Multiple people work on the same code</li>
+      <li>CI pipelines run Terraform automatically</li>
+      <li>Multiple environments exist at the same time</li>
+    </ul>
+    <p>
+      Without modules and clear boundaries, things break quietly and expensively.
+    </p>
+    <p>
+      Recruiters are not only looking for tools. They are looking for structure
+      and thinking.
+    </p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white">5️⃣ What I Changed in My Project</h2>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Clear Terraform modules</li>
+      <li>A dedicated environment folder</li>
+      <li>Clean inputs and outputs</li>
+      <li>A predictable execution flow</li>
+    </ul>
+    <p>
+      The code became easier to understand. Scaling became realistic. The story
+      behind the project became stronger.
+    </p>
+  </section>
+
+  <!-- FINAL REFLECTION -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white">🎯 Final Reflection</h2>
+    <p>
+      This project taught me that DevOps is not about perfection. It is about
+      clarity, safety, and intentional decisions.
+    </p>
+    <p>
+      Understanding why things break is more valuable than things simply working.
+    </p>
+    <p>
+      And now, I finally understand what Terraform modules are really for.
+    </p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center text-sm text-gray-400 py-10">
+  © 2025 Prudence Anumudu
+</footer>
+
+</body>
+</html>
