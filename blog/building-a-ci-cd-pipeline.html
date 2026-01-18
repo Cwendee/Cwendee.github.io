@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Building a CI/CD Pipeline and Learning How Systems Really Behave | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="text-gray-200 min-h-screen bg-fixed bg-center bg-cover"
+  style="background-image: url('../assets/images/blog-bg.jpg');"
+>
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../blog.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Blog
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-20">
+  <div class="bg-midnight/80 rounded-3xl p-10 space-y-14 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm">
+
+  <header class="space-y-4">
+    <h1 class="text-3xl font-semibold text-white">
+      🌱 Building a CI/CD Pipeline and Learning How Systems Really Behave
+    </h1>
+    <p class="text-gray-400">
+      Lessons from building a Jenkins and Docker pipeline under real constraints
+    </p>
+  </header>
+
+  <section class="space-y-4">
+    <p>
+      When I set out to build this Jenkins and Docker CI/CD pipeline, I thought the
+      value would come from getting it to work. What I didn’t expect was how much
+      of the learning would come from the moments where it didn’t.
+    </p>
+
+    <p>
+      This project quietly reshaped how I think about version control, pipelines,
+      networking, and deployment safety. Not in a dramatic way, but in the kind
+      of way that sticks.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">
+      📁 Starting Calmly with Version Control
+    </h2>
+
+    <p>
+      Early on, I had a moment of doubt about the state of my repository. The
+      directory structure didn’t look quite right, and it would have been easy
+      to assume something had gone wrong.
+    </p>
+
+    <p>
+      Instead of guessing, I checked the repository state properly. That small
+      moment was a reminder I’ve learned before, but clearly needed again. Git
+      does not tell its story through visible folders alone. The real truth lives
+      in its metadata.
+    </p>
+
+    <p>
+      From that point on, I trusted the tools more than my instincts when
+      something looked unfamiliar.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">
+      🧩 Being Deliberate with How I Commit
+    </h2>
+
+    <p>
+      I made a conscious decision to structure the project locally first on my
+      Ubuntu machine. The repository started clean. Once the application,
+      container setup, and pipeline structure were ready, I committed them
+      together as a foundation.
+    </p>
+
+    <p>
+      That first commit wasn’t about speed. It was about intent. From there,
+      every change was small and purposeful. Each commit told a clear story.
+    </p>
+
+    <p>
+      When something broke later, I could trace it back confidently instead of
+      digging through noisy history.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">
+      ⚙️ Jenkins Taught Me to Respect Boundaries
+    </h2>
+
+    <p>
+      Jenkins was where most of the real learning happened. Before touching
+      pipeline logic, I learned to always check that the Jenkins service itself
+      was healthy.
+    </p>
+
+    <p>
+      One lesson that really settled in was the difference between internal and
+      external access. Jenkins can safely use localhost for things running on the
+      same machine. The moment anything external is involved, that assumption
+      breaks down.
+    </p>
+
+    <p>
+      Once I started thinking consistently in terms of network boundaries, many
+      issues made immediate sense.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">
+      🧪 Why Tests Come Before Containers
+    </h2>
+
+    <p>
+      I designed the pipeline to run tests before building Docker images. The
+      pipeline creates a Python virtual environment, installs dependencies, and
+      runs tests before any containerization happens.
+    </p>
+
+    <p>
+      This keeps feedback fast and failures cheap. There’s no reason to package
+      an application that’s already failing.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">
+      🐳 Deployment on a Shared Machine
+    </h2>
+
+    <p>
+      Deployment was where the project started to feel real. Port 5000 was
+      already in use on the host by another container that had been running for a
+      long time.
+    </p>
+
+    <p>
+      Instead of stopping it, I adjusted the pipeline to expose the new container
+      on port 5001. This preserved an existing service and allowed both
+      applications to coexist safely.
+    </p>
+
+    <p>
+      The deployment logic always replaces the running container and validates
+      success using an application-level health check.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">
+      🚦 When the Pipeline Failed Before It Even Started
+    </h2>
+
+    <p>
+      One of the most educational moments came when Jenkins refused to load the
+      pipeline from source control. The same pipeline worked perfectly when
+      pasted directly into Jenkins but failed when configured to load from
+      GitHub.
+    </p>
+
+    <p>
+      The inline pipeline worked because Jenkins didn’t need to fetch anything.
+      The SCM-based pipeline failed because Jenkins couldn’t locate the
+      Jenkinsfile at the configured path.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">
+      🌤️ What I’m Taking Forward
+    </h2>
+
+    <p>
+      By the end of this project, the pipeline only turned green when the
+      application was actually reachable and healthy.
+    </p>
+
+    <p>
+      More importantly, it reinforced principles I’ll carry forward. Fail early.
+      Validate assumptions. Respect network boundaries. Make deployments safe to
+      repeat.
+    </p>
+
+    <p>
+      This project wasn’t just about Jenkins or Docker. It was about learning to
+      build systems that behave predictably under real-world constraints.
+    </p>
+  </section>
+
+  </div>
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © 2025 Prudence Anumudu
+</footer>
+
+</body>
+</html>
