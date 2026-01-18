@@ -1,3 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Production-Style CI/CD Pipeline | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .cta {
+      transition: all 0.3s ease;
+    }
+    .cta span {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cta:hover {
+      box-shadow: 0 0 25px #4cc9f0;
+    }
+    .cta:hover span {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<!-- 🔑 THIS WAS THE MISSING PIECE -->
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../projects.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Laboratory
+  </a>
+</nav>
+
 <main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
 
   <header>
@@ -16,6 +79,7 @@
 
   <section>
     <h2 class="text-xl font-semibold text-white mb-4">🔍 Problem Statement</h2>
+
     <p class="text-gray-300 leading-relaxed mb-4">
       As part of my DevOps and Cloud career transition, I needed to demonstrate
       practical CI/CD skills beyond theory.
@@ -46,6 +110,7 @@
 
   <section>
     <h2 class="text-xl font-semibold text-white mb-4">🛠️ Solution Overview</h2>
+
     <p class="text-gray-300 leading-relaxed mb-4">
       I built a Jenkins-based CI/CD pipeline that automates the entire lifecycle
       of a Flask application, from source code to a running container.
@@ -98,10 +163,7 @@
       <p><strong>1️⃣ Checkout</strong></p>
       <ul class="list-disc list-inside space-y-2">
         <li>Jenkins pulls the source code from GitHub</li>
-        <li>
-          Correct Jenkinsfile path (<code>jenkins/Jenkinsfile</code>) is explicitly
-          configured
-        </li>
+        <li>Correct Jenkinsfile path (<code>jenkins/Jenkinsfile</code>) is explicitly configured</li>
       </ul>
 
       <p><strong>2️⃣ Build</strong></p>
@@ -119,9 +181,7 @@
       <p><strong>4️⃣ Docker Build</strong></p>
       <ul class="list-disc list-inside space-y-2">
         <li>A Docker image is built using a lightweight Python base image</li>
-        <li>
-          <code>.dockerignore</code> is used to reduce build context and improve efficiency
-        </li>
+        <li><code>.dockerignore</code> is used to reduce build context and improve efficiency</li>
       </ul>
 
       <p><strong>5️⃣ Deploy</strong></p>
@@ -153,15 +213,13 @@
       <li>
         <strong>Port Collision on Host</strong><br />
         Issue: Port 5000 was already in use by another long-running container<br />
-        Solution: Mapped container port 5000 to host port 5001 instead of stopping
-        the existing service
+        Solution: Mapped container port 5000 to host port 5001 instead of stopping the existing service
       </li>
 
       <li>
         <strong>Container Networking Failure</strong><br />
         Issue: Health check failed due to incorrect port mapping<br />
-        Solution: Explicitly separated host and container ports and corrected Docker
-        run syntax
+        Solution: Explicitly separated host and container ports and corrected Docker run syntax
       </li>
 
       <li>
@@ -194,10 +252,7 @@
       <li>Docker host and container ports must be treated separately</li>
       <li>Idempotent deployment logic is essential for real-world CI/CD</li>
       <li>Health checks provide meaningful validation beyond container status</li>
-      <li>
-        Debugging CI/CD pipelines requires understanding both tooling and runtime
-        environments
-      </li>
+      <li>Debugging CI/CD pipelines requires understanding both tooling and runtime environments</li>
     </ul>
   </section>
 
@@ -221,3 +276,10 @@
   </section>
 
 </main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © 2025 Prudence Anumudu
+</footer>
+
+</body>
+</html>
