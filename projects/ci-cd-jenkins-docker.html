@@ -1,0 +1,223 @@
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
+
+  <header>
+    <h1 class="text-3xl font-semibold text-white mb-3">
+      Production-Style CI/CD Pipeline Using Jenkins and Docker
+    </h1>
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+      I built a Jenkins-driven CI/CD pipeline that automatically builds, tests,
+      containerizes, and deploys a Flask application with safe redeployments and
+      health-verified delivery.
+    </p>
+
+    <span class="badge">Completed</span>
+  </header>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🔍 Problem Statement</h2>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      As part of my DevOps and Cloud career transition, I needed to demonstrate
+      practical CI/CD skills beyond theory.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The goal was to design and implement a realistic CI/CD pipeline that:
+    </p>
+
+    <ul class="space-y-2 list-disc list-inside text-gray-300">
+      <li>automatically builds and tests an application</li>
+      <li>containerizes the application using Docker</li>
+      <li>deploys it safely on a Linux host</li>
+      <li>validates deployment success through a health check</li>
+    </ul>
+
+    <p class="text-gray-300 leading-relaxed mt-4">
+      The solution needed to reflect real-world constraints, such as:
+    </p>
+
+    <ul class="space-y-2 list-disc list-inside text-gray-300">
+      <li>shared infrastructure</li>
+      <li>port conflicts</li>
+      <li>idempotent deployments</li>
+      <li>clear failure signals</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🛠️ Solution Overview</h2>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      I built a Jenkins-based CI/CD pipeline that automates the entire lifecycle
+      of a Flask application, from source code to a running container.
+    </p>
+
+    <h3 class="text-lg font-semibold text-white mb-3">Key Components</h3>
+    <ul class="space-y-2 list-disc list-inside text-gray-300">
+      <li><strong>Source Control:</strong> GitHub</li>
+      <li><strong>CI/CD Tool:</strong> Jenkins (Declarative Pipeline)</li>
+      <li><strong>Application:</strong> Python Flask app</li>
+      <li><strong>Testing:</strong> pytest</li>
+      <li><strong>Containerization:</strong> Docker</li>
+      <li><strong>Host OS:</strong> Ubuntu Linux</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🧱 Architecture Summary</h2>
+
+    <h3 class="text-lg font-semibold text-white mb-3">High-Level Flow</h3>
+    <ul class="space-y-2 list-disc list-inside text-gray-300 mb-4">
+      <li>Code is pushed to GitHub</li>
+      <li>Jenkins pulls the repository using SCM</li>
+      <li>Jenkins builds the application and installs dependencies</li>
+      <li>Automated tests are executed</li>
+      <li>A Docker image is built</li>
+      <li>The container is deployed on an Ubuntu VM</li>
+      <li>Jenkins verifies deployment via a health check endpoint</li>
+    </ul>
+
+    <h3 class="text-lg font-semibold text-white mb-3">Key Design Decision</h3>
+    <ul class="space-y-2 list-disc list-inside text-gray-300">
+      <li>The Flask app listens on port 5000 inside the container</li>
+      <li>
+        The container is exposed on port 5001 on the host to avoid conflicts with
+        existing services
+      </li>
+    </ul>
+
+    <p class="text-gray-300 leading-relaxed mt-4">
+      This ensured safe coexistence on shared infrastructure.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🔄 CI/CD Pipeline Stages</h2>
+
+    <div class="space-y-6 text-gray-300 leading-relaxed">
+
+      <p><strong>1️⃣ Checkout</strong></p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Jenkins pulls the source code from GitHub</li>
+        <li>
+          Correct Jenkinsfile path (<code>jenkins/Jenkinsfile</code>) is explicitly
+          configured
+        </li>
+      </ul>
+
+      <p><strong>2️⃣ Build</strong></p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>A Python virtual environment is created</li>
+        <li>Application dependencies are installed from <code>requirements.txt</code></li>
+      </ul>
+
+      <p><strong>3️⃣ Test</strong></p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Automated tests are executed using pytest</li>
+        <li>Pipeline fails immediately if any test fails</li>
+      </ul>
+
+      <p><strong>4️⃣ Docker Build</strong></p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>A Docker image is built using a lightweight Python base image</li>
+        <li>
+          <code>.dockerignore</code> is used to reduce build context and improve efficiency
+        </li>
+      </ul>
+
+      <p><strong>5️⃣ Deploy</strong></p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Any existing container is safely removed</li>
+        <li>A new container is started with explicit host-to-container port mapping</li>
+        <li>Deployment is idempotent and safe to re-run</li>
+      </ul>
+
+      <p><strong>6️⃣ Health Check</strong></p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Jenkins performs an HTTP request to <code>/health</code></li>
+        <li>The pipeline only succeeds if the application responds correctly</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">⚠️ Challenges & How I Solved Them</h2>
+
+    <ul class="space-y-4 list-disc list-inside text-gray-300">
+      <li>
+        <strong>Jenkinsfile Discovery Failure</strong><br />
+        Issue: Jenkins failed to locate the Jenkinsfile<br />
+        Solution: Corrected the SCM script path to <code>jenkins/Jenkinsfile</code>
+      </li>
+
+      <li>
+        <strong>Port Collision on Host</strong><br />
+        Issue: Port 5000 was already in use by another long-running container<br />
+        Solution: Mapped container port 5000 to host port 5001 instead of stopping
+        the existing service
+      </li>
+
+      <li>
+        <strong>Container Networking Failure</strong><br />
+        Issue: Health check failed due to incorrect port mapping<br />
+        Solution: Explicitly separated host and container ports and corrected Docker
+        run syntax
+      </li>
+
+      <li>
+        <strong>Flask Not Reachable from Container</strong><br />
+        Issue: Application bound to localhost<br />
+        Solution: Updated Flask to bind to <code>0.0.0.0</code> to allow external access
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Outcome</h2>
+    <ul class="space-y-2 list-disc list-inside text-gray-300">
+      <li>Fully automated CI/CD pipeline running successfully</li>
+      <li>Reliable container deployment with zero downtime for existing services</li>
+      <li>Verified deployment through application-level health checks</li>
+      <li>Pipeline consistently produces deterministic, repeatable results</li>
+    </ul>
+
+    <p class="text-gray-300 leading-relaxed mt-4">
+      The final pipeline runs green only when the application is truly available,
+      not just when containers start.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🧠 Key Learnings</h2>
+    <ul class="space-y-2 list-disc list-inside text-gray-300">
+      <li>Correct Jenkinsfile configuration is critical for SCM-based pipelines</li>
+      <li>Docker host and container ports must be treated separately</li>
+      <li>Idempotent deployment logic is essential for real-world CI/CD</li>
+      <li>Health checks provide meaningful validation beyond container status</li>
+      <li>
+        Debugging CI/CD pipelines requires understanding both tooling and runtime
+        environments
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🏁 Conclusion</h2>
+    <p class="text-gray-300 leading-relaxed">
+      This project demonstrates my ability to design, debug, and deliver a
+      production-style CI/CD pipeline using Jenkins and Docker. It reflects not
+      only tool familiarity, but also engineering judgment, problem-solving, and
+      real-world deployment awareness.
+    </p>
+  </section>
+
+  <section>
+    <a
+      href="https://github.com/Cwendee/ci-cd-jenkins-docker-pipeline"
+      target="_blank"
+      class="cta inline-flex items-center gap-2 bg-gray-700 px-6 py-4 rounded-xl text-white">
+      Explore the raw build <span>👉🏽</span>
+    </a>
+  </section>
+
+</main>
