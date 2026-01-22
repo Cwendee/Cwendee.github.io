@@ -69,11 +69,14 @@
   </p>
 </section>
 
-<!-- SECTION -->
+<!-- MINDSET SHIFT -->
 <section class="space-y-4">
   <h2 class="text-xl font-semibold text-white tracking-tight">
     🔄 From Docker to Kubernetes — What Actually Changed?
   </h2>
+
+  <p>Docker helped me understand how applications are packaged and run.</p>
+  <p>Kubernetes taught me how applications stay alive.</p>
 
   <ul class="list-disc list-inside space-y-2">
     <li>🐳 Docker runs containers</li>
@@ -92,13 +95,67 @@
   </ul>
 
   <p>
+    This was my first major mindset shift.
     Kubernetes isn’t “Docker with extra steps.”
     It’s a completely different way of thinking about reliability.
   </p>
 </section>
 
-<!-- VISUALS -->
-<section class="space-y-10">
+<!-- API DRIVEN -->
+<section class="space-y-4">
+  <h2 class="text-xl font-semibold text-white tracking-tight">
+    🔗 Understanding How Kubernetes Communicates
+  </h2>
+
+  <p>
+    One of the most important things I learned early on is that Kubernetes is API-driven.
+  </p>
+
+  <p>
+    You don’t tell Kubernetes how to do things.
+    You tell it what you want, and it continuously works to make reality match that request.
+  </p>
+
+  <ul class="list-disc list-inside space-y-2">
+    <li>Users declare desired state</li>
+    <li>Controllers observe current state</li>
+    <li>Kubernetes reconciles the difference automatically</li>
+  </ul>
+</section>
+
+<!-- TOOLS -->
+<section class="space-y-4">
+  <h2 class="text-xl font-semibold text-white tracking-tight">
+    🛠️ The Tools That Made Everything Click
+  </h2>
+
+  <p><strong>kubectl</strong></p>
+  <ul class="list-disc list-inside space-y-2">
+    <li>Does not run containers</li>
+    <li>Sends instructions to the API Server</li>
+    <li>Reflects real-time cluster state</li>
+  </ul>
+
+  <p>
+    Once I understood that kubectl is just a communication tool,
+    Kubernetes started to feel far less mysterious.
+  </p>
+
+  <p><strong>kubeadm</strong></p>
+  <ul class="list-disc list-inside space-y-2">
+    <li>Initializes control plane components</li>
+    <li>Sets up certificates and authentication</li>
+    <li>Prepares nodes to join a cluster</li>
+  </ul>
+
+  <p>
+    Learning kubeadm exposed what Kubernetes is actually made of —
+    coordinated components working together, not magic ✨
+  </p>
+</section>
+
+<!-- DIAGRAMS -->
+<section class="space-y-16">
   <h2 class="text-xl font-semibold text-white tracking-tight">
     🎨 Visual Diagrams — How Kubernetes Finally Clicked for Me
   </h2>
@@ -114,16 +171,27 @@
       <img src="../assets/images/blog/kubernetes/kubearch.png" class="rounded-lg max-w-xs">
     </div>
 
-    <p class="text-gray-400">
+    <p class="font-semibold text-white">What this diagram shows:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Docker focuses on running containers</li>
+      <li>Kubernetes focuses on managing containers over time</li>
+    </ul>
+
+    <p>
       Docker answers “Can my app run?”  
       Kubernetes answers “Can my app survive?”
+    </p>
+
+    <p>
+      This helped me understand why Kubernetes feels heavier.
+      It’s solving a much bigger reliability problem.
     </p>
   </div>
 
   <!-- 2 -->
   <div class="space-y-4">
     <h3 class="font-semibold text-white">
-      ☸️ Kubernetes Cluster Architecture
+      ☸️ Kubernetes Cluster Architecture (Control Plane vs Nodes)
     </h3>
 
     <div class="flex flex-wrap gap-6 justify-center">
@@ -131,10 +199,16 @@
       <img src="../assets/images/blog/kubernetes/kubenodes.png" class="rounded-lg max-w-xs">
     </div>
 
-    <p class="text-gray-400">
-      The control plane decides.  
-      Worker nodes execute.  
-      Nothing is random.
+    <p class="font-semibold text-white">What this diagram shows:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Control Plane handles decision-making</li>
+      <li>Worker Nodes handle execution</li>
+    </ul>
+
+    <p>
+      Once I realized that kubectl talks only to the API Server
+      and nodes don’t make decisions on their own,
+      Kubernetes stopped feeling random and started feeling intentional.
     </p>
   </div>
 
@@ -144,21 +218,30 @@
       🔗 How Communication Happens in Kubernetes
     </h3>
 
-    <img
-      src="../assets/images/blog/kubernetes/kubecom.png"
-      class="rounded-lg mx-auto max-w-xl"
-    >
+    <img src="../assets/images/blog/kubernetes/kubecom.png" class="rounded-lg mx-auto max-w-xl">
 
-    <p class="text-gray-400">
-      You don’t execute actions — you declare intent,
-      and Kubernetes reconciles state.
+    <p class="font-semibold text-white">What this diagram shows:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>kubectl → API Server</li>
+      <li>API Server → Controllers</li>
+      <li>Controllers → Nodes</li>
+    </ul>
+
+    <p>
+      You don’t execute actions in Kubernetes.
+      You declare intent, and the system reconciles state.
+    </p>
+
+    <p>
+      This explains why things sometimes “eventually” work —
+      Kubernetes is always converging.
     </p>
   </div>
 
   <!-- 4 -->
   <div class="space-y-4">
     <h3 class="font-semibold text-white">
-      🌐 Services & Networking
+      🌐 Services & Networking (Why Some IPs Never Open)
     </h3>
 
     <div class="flex flex-wrap gap-6 justify-center">
@@ -166,8 +249,19 @@
       <img src="../assets/images/blog/kubernetes/clusternet.png" class="rounded-lg max-w-xs">
     </div>
 
-    <p class="text-gray-400">
-      Some IPs look real — but are intentionally unreachable.
+    <p class="font-semibold text-white">What this diagram shows:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>ClusterIP is internal-only</li>
+      <li>NodePort is externally reachable</li>
+      <li>Pods are ephemeral and replaceable</li>
+    </ul>
+
+    <p>
+      This diagram answered my biggest confusion —
+      why some IP addresses look real but will never open in a browser.
+    </p>
+
+    <p>
       Kubernetes wasn’t broken. It was protecting me.
     </p>
   </div>
@@ -175,19 +269,27 @@
   <!-- 5 -->
   <div class="space-y-4">
     <h3 class="font-semibold text-white">
-      🗄️ MongoDB + Mongo Express on Kubernetes
+      🗄️ MongoDB + Mongo Express on Kubernetes (What I Built)
     </h3>
 
-    <img
-      src="../assets/images/blog/kubernetes/mongodb-kube.png"
-      class="rounded-lg mx-auto max-w-xl"
-    >
+    <img src="../assets/images/blog/kubernetes/mongodb-kube.png" class="rounded-lg mx-auto max-w-xl">
 
-    <p class="text-gray-400">
-      Databases stay internal.  
-      Admin tools are explicitly exposed.  
-      Secrets are never hard-coded.
+    <p class="font-semibold text-white">What this diagram represents:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>MongoDB running internally via ClusterIP</li>
+      <li>Mongo Express exposed via NodePort</li>
+      <li>Secrets shared securely between services</li>
+    </ul>
+
+    <p>
+      This showed me how Kubernetes enforces separation of concerns:
     </p>
+
+    <ul class="list-disc list-inside space-y-2">
+      <li>Databases stay internal</li>
+      <li>Admin tools are explicitly exposed</li>
+      <li>Credentials are never hard-coded</li>
+    </ul>
   </div>
 </section>
 
@@ -196,15 +298,19 @@
   <h2 class="text-xl font-semibold text-white tracking-tight">
     🎯 Final Thoughts
   </h2>
+
   <p>
-    Kubernetes isn’t just a tool — it’s a philosophy of system reliability.
+    Kubernetes isn’t just a tool; it’s a philosophy of system reliability.
   </p>
+
   <p>
-    Learning it deeply requires patience, curiosity, and the willingness to sit
-    with confusion until clarity emerges.
+    Learning it deeply requires patience, curiosity,
+    and the willingness to sit with confusion until clarity emerges.
   </p>
+
   <p>
-    This is just the beginning of my Kubernetes journey — more to come 🚀
+    This is just the beginning of my Kubernetes journey —
+    but it’s already been one of the most rewarding learning experiences I’ve had.
   </p>
 </section>
 
