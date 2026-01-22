@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My First Deep Dive into Kubernetes | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="text-gray-200 min-h-screen bg-fixed bg-center bg-cover"
+  style="background-image: url('../assets/images/blog-bg.jpg');"
+>
+
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../blog.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Blog
+  </a>
+</nav>
+
+<!-- CONTENT -->
+<main class="max-w-4xl mx-auto px-6 py-20">
+  <div class="bg-midnight/80 rounded-3xl p-10 space-y-14 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm">
+
+<!-- HEADER -->
+<header class="space-y-4">
+  <h1 class="text-3xl font-semibold text-white">
+    🚀 My First Deep Dive into Kubernetes
+  </h1>
+  <p class="text-gray-400">
+    Lessons, Confusion, and Real Understanding
+  </p>
+</header>
+
+<!-- INTRO -->
+<section class="space-y-4">
+  <p>
+    Kubernetes was one of those technologies I kept hearing about everywhere in DevOps conversations,
+    cloud architecture discussions, and job descriptions, but never truly understood.
+  </p>
+  <p>
+    I knew Docker. I was getting comfortable with containers.
+    But Kubernetes felt abstract, complex, and honestly… intimidating 😅
+  </p>
+  <p>
+    So I decided to learn it properly — not by skimming concepts, but by installing it,
+    breaking things, fixing them, and documenting the entire experience.
+  </p>
+  <p>
+    This post shares what I learned, what confused me, and why the friction itself became
+    one of the biggest learning advantages 🧠
+  </p>
+</section>
+
+<!-- SECTION -->
+<section class="space-y-4">
+  <h2 class="text-xl font-semibold text-white tracking-tight">
+    🔄 From Docker to Kubernetes — What Actually Changed?
+  </h2>
+
+  <ul class="list-disc list-inside space-y-2">
+    <li>🐳 Docker runs containers</li>
+    <li>☸️ Kubernetes manages containers over time</li>
+  </ul>
+
+  <p>
+    With Kubernetes, the focus shifts from running an app to keeping an app healthy:
+  </p>
+
+  <ul class="list-disc list-inside space-y-2">
+    <li>Containers can crash and automatically restart</li>
+    <li>Networking is abstracted and stable</li>
+    <li>Configuration and secrets are centrally managed</li>
+    <li>Applications are treated as systems, not single processes</li>
+  </ul>
+
+  <p>
+    Kubernetes isn’t “Docker with extra steps.”
+    It’s a completely different way of thinking about reliability.
+  </p>
+</section>
+
+<!-- VISUALS -->
+<section class="space-y-10">
+  <h2 class="text-xl font-semibold text-white tracking-tight">
+    🎨 Visual Diagrams — How Kubernetes Finally Clicked for Me
+  </h2>
+
+  <!-- 1 -->
+  <div class="space-y-4">
+    <h3 class="font-semibold text-white">
+      🧩 Docker vs Kubernetes — Responsibility Shift
+    </h3>
+
+    <div class="flex flex-wrap gap-6 justify-center">
+      <img src="../assets/images/blog/kubernetes/dockerarch.png" class="rounded-lg max-w-xs">
+      <img src="../assets/images/blog/kubernetes/kubearch.png" class="rounded-lg max-w-xs">
+    </div>
+
+    <p class="text-gray-400">
+      Docker answers “Can my app run?”  
+      Kubernetes answers “Can my app survive?”
+    </p>
+  </div>
+
+  <!-- 2 -->
+  <div class="space-y-4">
+    <h3 class="font-semibold text-white">
+      ☸️ Kubernetes Cluster Architecture
+    </h3>
+
+    <div class="flex flex-wrap gap-6 justify-center">
+      <img src="../assets/images/blog/kubernetes/kubectrl.png" class="rounded-lg max-w-xs">
+      <img src="../assets/images/blog/kubernetes/kubenodes.png" class="rounded-lg max-w-xs">
+    </div>
+
+    <p class="text-gray-400">
+      The control plane decides.  
+      Worker nodes execute.  
+      Nothing is random.
+    </p>
+  </div>
+
+  <!-- 3 -->
+  <div class="space-y-4">
+    <h3 class="font-semibold text-white">
+      🔗 How Communication Happens in Kubernetes
+    </h3>
+
+    <img
+      src="../assets/images/blog/kubernetes/kubecom.png"
+      class="rounded-lg mx-auto max-w-xl"
+    >
+
+    <p class="text-gray-400">
+      You don’t execute actions — you declare intent,
+      and Kubernetes reconciles state.
+    </p>
+  </div>
+
+  <!-- 4 -->
+  <div class="space-y-4">
+    <h3 class="font-semibold text-white">
+      🌐 Services & Networking
+    </h3>
+
+    <div class="flex flex-wrap gap-6 justify-center">
+      <img src="../assets/images/blog/kubernetes/kubeservices.png" class="rounded-lg max-w-xs">
+      <img src="../assets/images/blog/kubernetes/clusternet.png" class="rounded-lg max-w-xs">
+    </div>
+
+    <p class="text-gray-400">
+      Some IPs look real — but are intentionally unreachable.
+      Kubernetes wasn’t broken. It was protecting me.
+    </p>
+  </div>
+
+  <!-- 5 -->
+  <div class="space-y-4">
+    <h3 class="font-semibold text-white">
+      🗄️ MongoDB + Mongo Express on Kubernetes
+    </h3>
+
+    <img
+      src="../assets/images/blog/kubernetes/mongodb-kube.png"
+      class="rounded-lg mx-auto max-w-xl"
+    >
+
+    <p class="text-gray-400">
+      Databases stay internal.  
+      Admin tools are explicitly exposed.  
+      Secrets are never hard-coded.
+    </p>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="space-y-4">
+  <h2 class="text-xl font-semibold text-white tracking-tight">
+    🎯 Final Thoughts
+  </h2>
+  <p>
+    Kubernetes isn’t just a tool — it’s a philosophy of system reliability.
+  </p>
+  <p>
+    Learning it deeply requires patience, curiosity, and the willingness to sit
+    with confusion until clarity emerges.
+  </p>
+  <p>
+    This is just the beginning of my Kubernetes journey — more to come 🚀
+  </p>
+</section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center text-sm text-gray-400 py-10">
+  © 2025 Prudence Anumudu
+</footer>
+
+</body>
+</html>
