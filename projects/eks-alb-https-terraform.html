@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Production-Grade EKS Platform | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .cta {
+      transition: all 0.3s ease;
+    }
+    .cta span {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cta:hover {
+      box-shadow: 0 0 25px #4cc9f0;
+    }
+    .cta:hover span {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../projects.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Laboratory
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
+
+  <!-- HEADER -->
+  <header>
+    <h1 class="text-3xl font-semibold text-white mb-3">
+      Production-Grade EKS Platform with ALB, HTTPS & IRSA
+    </h1>
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+      Designed and deployed a secure, production-style Kubernetes platform on AWS
+      using Terraform, Amazon EKS, AWS Load Balancer Controller, IRSA, and HTTPS
+      termination via ACM. The project mirrors real-world cloud and DevOps
+      operational patterns.
+    </p>
+
+    <span class="badge">Completed</span>
+  </header>
+
+  <!-- PROBLEM -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🎯 Problem & Objective</h2>
+    <p class="text-gray-300 leading-relaxed">
+      The goal was to deploy a containerized application on Kubernetes while
+      maintaining strong security boundaries, minimal IAM exposure, and clean
+      infrastructure reproducibility. The platform needed to support HTTPS,
+      controlled ingress, and safe teardown — without leaking credentials or
+      exposing workloads directly to the internet.
+    </p>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🏗️ High-Level Architecture</h2>
+    <p class="text-gray-300 leading-relaxed">
+      The architecture follows a layered cloud-native approach. A custom VPC
+      hosts an Amazon EKS cluster with managed node groups. An internet-facing
+      Application Load Balancer serves as the single entry point, routing traffic
+      to Kubernetes services through the AWS Load Balancer Controller using IP
+      mode.
+    </p>
+  </section>
+
+  <!-- DESIGN DECISIONS -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🧠 Key Design Decisions</h2>
+
+    <ul class="space-y-3 list-disc list-inside text-gray-300 leading-relaxed">
+      <li>
+        <strong>EKS with Managed Node Groups:</strong> Selected to reduce
+        operational overhead while retaining Kubernetes flexibility and control.
+      </li>
+
+      <li>
+        <strong>AWS Load Balancer Controller:</strong> Used to integrate ALB
+        lifecycle management directly with Kubernetes ingress resources.
+      </li>
+
+      <li>
+        <strong>IRSA (IAM Roles for Service Accounts):</strong> Implemented to
+        eliminate static AWS credentials inside pods and enforce least privilege.
+      </li>
+
+      <li>
+        <strong>ACM HTTPS Termination:</strong> TLS handled at the ALB layer,
+        keeping application containers simple and secure.
+      </li>
+
+      <li>
+        <strong>Terraform Modularization:</strong> Infrastructure split into VPC,
+        EKS, node groups, and controller modules for clarity and reuse.
+      </li>
+    </ul>
+  </section>
+
+  <!-- TOOLS -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🛠 Tools & Technologies</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">Terraform</span>
+      <span class="tag">AWS EKS</span>
+      <span class="tag">Kubernetes</span>
+      <span class="tag">ALB</span>
+      <span class="tag">IRSA</span>
+      <span class="tag">ACM</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Amazon ECR</span>
+      <span class="tag">Git</span>
+    </div>
+  </section>
+
+  <!-- EXECUTION -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Execution & Verification</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Infrastructure was provisioned incrementally using Terraform, followed by
+      Kubernetes deployments and ingress configuration. HTTPS connectivity was
+      validated using curl and browser testing. Health checks and routing were
+      verified through ALB target groups and Kubernetes service inspection.
+    </p>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🚧 Challenges Faced</h2>
+    <ul class="space-y-3 list-disc list-inside text-gray-300 leading-relaxed">
+      <li>
+        <strong>ALB provisioning failures:</strong> Caused by overly restrictive
+        IAM permissions, resolved by refining the controller policy.
+      </li>
+
+      <li>
+        <strong>Terraform state lock issues:</strong> Triggered by interrupted
+        applies and resolved through DynamoDB lock inspection and safe recovery.
+      </li>
+
+      <li>
+        <strong>HTTPS certificate validation errors:</strong> Fixed by creating a
+        dedicated subdomain and validating DNS without affecting the main domain.
+      </li>
+
+      <li>
+        <strong>502 Bad Gateway errors:</strong> Traced to container port mismatch
+        and health check configuration.
+      </li>
+    </ul>
+  </section>
+
+  <!-- LEARNINGS -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">💡 Key Learnings</h2>
+    <ul class="space-y-3 list-disc list-inside text-gray-300 leading-relaxed">
+      <li>Most Kubernetes failures originate from IAM or networking layers.</li>
+      <li>IRSA dramatically improves security posture in production clusters.</li>
+      <li>Terraform hygiene is critical for long-term maintainability.</li>
+      <li>Production readiness requires observability and clean teardown paths.</li>
+    </ul>
+  </section>
+
+  <!-- OUTCOME -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Outcome & Final Result</h2>
+    <p class="text-gray-300 leading-relaxed">
+      The final platform successfully delivered HTTPS traffic to a containerized
+      Next.js application through an ALB-backed Kubernetes ingress. All resources
+      were reproducible via Terraform and safely destroyed after validation to
+      control costs.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <a
+      href="https://github.com/Cwendee/eks-alb-https-terraform"
+      target="_blank"
+      class="cta inline-flex items-center gap-2 bg-gray-700 px-6 py-4 rounded-xl text-white">
+      Explore the raw build <span>👉🏽</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © <span id="year"></span> Prudence Anumudu
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
