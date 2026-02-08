@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Building a Production EKS Platform; So I Built a Production EKS Platform Anyway | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="text-gray-200 min-h-screen bg-fixed bg-center bg-cover"
+  style="background-image: url('../assets/images/blog-bg.jpg');"
+>
+
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../blog.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Blog
+  </a>
+</nav>
+
+<!-- CONTENT -->
+<main class="max-w-4xl mx-auto px-6 py-20">
+  <div class="bg-midnight/80 rounded-3xl p-10 space-y-14 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm">
+
+  <!-- HEADER -->
+  <header class="space-y-4">
+    <h1 class="text-3xl font-semibold text-white">
+      🚀 Building a Production EKS Platform
+    </h1>
+    <p class="text-gray-400">
+      From first contact with Kubernetes to deploying a secure, production-grade EKS platform with HTTPS and IRSA.
+    </p>
+  </header>
+
+  <!-- SECTION 1 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">1️⃣ The Fear I Didn’t Want to Admit</h2>
+    <p>
+      Kubernetes is one of those technologies that carries a reputation.
+    </p>
+    <p>
+      Powerful. Flexible. Industry-standard.
+    </p>
+    <p>
+      And honestly? Intimidating.
+    </p>
+    <p>
+      I had worked with Docker, Terraform, ECS, and CI/CD pipelines before. Those felt
+      structured. Predictable. Kubernetes felt… vast.
+    </p>
+    <p>
+      There were too many moving parts. Too many YAML files. Too many concepts that
+      seemed simple on paper but overwhelming in practice.
+    </p>
+    <p>
+      For a while, I stayed on the edges — learning just enough to understand what
+      others were doing.
+    </p>
+    <p><em>But I knew avoiding it wasn’t helping me grow.</em></p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">2️⃣ Choosing Discomfort on Purpose</h2>
+    <p>
+      Instead of starting with toy examples, I made a deliberate decision:
+    </p>
+    <p><strong>If I was going to learn Kubernetes, I would do it the hard way.</strong></p>
+    <p>
+      I chose to build a production-style platform on Amazon EKS — not because it was
+      easy, but because it would force me to understand how things actually work.
+    </p>
+    <p>
+      That meant dealing with:
+    </p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Infrastructure provisioning with Terraform</li>
+      <li>IAM roles and permissions that actually matter</li>
+      <li>Ingress, load balancing, and real networking</li>
+      <li>HTTPS, certificates, and DNS</li>
+    </ul>
+    <p>
+      No shortcuts. No magic abstractions.
+    </p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">3️⃣ When Things Started Breaking 🧩</h2>
+    <p>
+      And break they did.
+    </p>
+    <p>
+      At first, the cluster existed — but nothing worked the way I expected.
+    </p>
+    <p>
+      The Application Load Balancer refused to provision. Ingress resources sat there
+      silently. Health checks failed. HTTPS didn’t come up.
+    </p>
+    <p>
+      The most frustrating part was that Kubernetes rarely screams at you.
+    </p>
+    <p>
+      It quietly waits while you figure out what you misunderstood.
+    </p>
+    <p>
+      That forced me to slow down and truly understand:
+    </p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>How IAM Roles for Service Accounts (IRSA) actually work</li>
+      <li>Why least-privilege policies are easy to get wrong</li>
+      <li>How ALB health checks interact with container ports</li>
+      <li>Why “it deployed” doesn’t mean “it’s production-ready”</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">4️⃣ The Moment It Clicked 💡</h2>
+    <p>
+      The breakthrough didn’t come from adding more configuration.
+    </p>
+    <p>
+      It came from understanding responsibility boundaries.
+    </p>
+    <p>
+      Terraform wasn’t just creating resources — it was defining ownership.
+    </p>
+    <p>
+      Kubernetes wasn’t just running containers — it was enforcing contracts between
+      networking, security, and applications.
+    </p>
+    <p>
+      Once those boundaries became clear, debugging became logical instead of emotional.
+    </p>
+    <p>
+      The platform stabilized. HTTPS worked. Traffic flowed. Health checks passed.
+    </p>
+    <p><strong>The system finally behaved like a system.</strong></p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">5️⃣ Why I’m Glad I Didn’t Avoid Kubernetes</h2>
+    <p>
+      Kubernetes is broad. It’s complex. And yes — it can be scary.
+    </p>
+    <p>
+      But that complexity exists because it solves real problems at scale.
+    </p>
+    <p>
+      This project taught me that confidence doesn’t come from knowing everything.
+    </p>
+    <p>
+      It comes from knowing how to approach unfamiliar systems methodically and safely.
+    </p>
+    <p>
+      I’m still learning Kubernetes. But now I’m learning from experience, not fear.
+    </p>
+  </section>
+
+  <!-- FINAL REFLECTION -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">🎯 Final Reflection</h2>
+    <p>
+      This project wasn’t about mastering Kubernetes overnight.
+    </p>
+    <p>
+      It was about proving to myself that I could step into uncomfortable territory,
+      build something real, break it, fix it, and understand it.
+    </p>
+    <p>
+      And that mindset — more than any tool — is what I want my portfolio to reflect.
+    </p>
+  </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center text-sm text-gray-400 py-10">
+  © <span id="year"></span> Prudence Anumudu
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
