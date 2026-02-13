@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>From Classroom Kubernetes to Production Thinking | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="text-gray-200 min-h-screen bg-fixed bg-center bg-cover"
+  style="background-image: url('../assets/images/blog-bg.jpg');"
+>
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../blog.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Blog
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-20">
+  <div class="bg-midnight/80 rounded-3xl p-10 space-y-14 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm">
+
+  <!-- HEADER -->
+  <header class="space-y-4">
+    <h1 class="text-3xl font-semibold text-white">
+      🌱 From Classroom Kubernetes to Production Thinking 🚀
+    </h1>
+    <p class="text-gray-400">
+      Revisiting a simple classroom deployment and discovering what it truly means to build for production.
+    </p>
+  </header>
+
+  <!-- SECTION 1 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">1️⃣ It Worked… But Did I Understand It?</h2>
+    <p>
+      A few weeks ago in class, we deployed NGINX to Kubernetes.
+    </p>
+    <p>
+      Pods were running. Services exposed the application. Rolling updates worked.
+    </p>
+    <p>
+      On the surface, everything was fine.
+    </p>
+    <p>
+      But I kept asking myself:
+    </p>
+    <p><strong>Did I really understand what makes this production-ready?</strong></p>
+    <p>
+      Or did I just follow instructions until the YAML stopped throwing errors?
+    </p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">2️⃣ Going Beyond “It Works” ⚙️</h2>
+    <p>
+      Instead of moving on to the next topic, I reopened the project.
+    </p>
+    <p>
+      This time, I wanted to push it further.
+    </p>
+    <p>
+      I asked new questions:
+    </p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>What happens if traffic increases suddenly?</li>
+      <li>How does Kubernetes decide when to scale?</li>
+      <li>What enables autoscaling to work correctly?</li>
+      <li>What prevents resource exhaustion inside the cluster?</li>
+    </ul>
+    <p>
+      That curiosity changed everything.
+    </p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">3️⃣ When the Missing Pieces Became Clear 🧩</h2>
+    <p>
+      I implemented resource requests and limits.
+    </p>
+    <p>
+      I installed Metrics Server.
+    </p>
+    <p>
+      I configured a Horizontal Pod Autoscaler.
+    </p>
+    <p>
+      Then I generated load inside the cluster and watched the replica count change in real time.
+    </p>
+    <p>
+      That’s when it clicked.
+    </p>
+    <p>
+      Kubernetes does not scale “automatically.”
+    </p>
+    <p>
+      It scales based on ratios:
+    </p>
+    <p><strong>Current CPU Usage ÷ Requested CPU</strong></p>
+    <p>
+      No resource requests? No scaling.
+    </p>
+    <p>
+      No metrics server? No visibility.
+    </p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">4️⃣ Thinking Like an Engineer 💡</h2>
+    <p>
+      The deployment stopped being a classroom exercise.
+    </p>
+    <p>
+      It became a system.
+    </p>
+    <p>
+      A system with:
+    </p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>High availability through replicas</li>
+      <li>Controlled rolling updates</li>
+      <li>Resource governance</li>
+      <li>Elastic scaling under demand</li>
+    </ul>
+    <p>
+      I wasn’t just deploying containers anymore.
+    </p>
+    <p>
+      I was designing behavior.
+    </p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">5️⃣ What This Taught Me</h2>
+    <p>
+      Production readiness is intentional.
+    </p>
+    <p>
+      Availability is engineered.
+    </p>
+    <p>
+      Scaling is conditional.
+    </p>
+    <p>
+      And understanding comes from experimentation — not memorization.
+    </p>
+    <p>
+      This wasn’t about mastering Kubernetes overnight.
+    </p>
+    <p>
+      It was about shifting from “following steps” to “understanding systems.”
+    </p>
+  </section>
+
+  <!-- FINAL REFLECTION -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">🎯 Final Reflection</h2>
+    <p>
+      The most valuable part of this experience wasn’t the YAML files.
+    </p>
+    <p>
+      It was the mindset shift.
+    </p>
+    <p>
+      I’m still learning Kubernetes.
+    </p>
+    <p>
+      But now I’m learning it through experimentation, debugging, and deeper reasoning.
+    </p>
+    <p>
+      And that shift — from classroom understanding to production thinking — is the real progress.
+    </p>
+  </section>
+
+  </div>
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © <span id="year"></span> Prudence Anumudu
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
