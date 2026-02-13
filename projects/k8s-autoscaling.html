@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Production-Ready Kubernetes Deployment with Autoscaling | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .cta {
+      transition: all 0.3s ease;
+    }
+    .cta span {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cta:hover {
+      box-shadow: 0 0 25px #4cc9f0;
+    }
+    .cta:hover span {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../projects.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Laboratory
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
+
+  <!-- HEADER -->
+  <header>
+    <h1 class="text-3xl font-semibold text-white mb-3">
+      Production-Ready Kubernetes Deployment with Horizontal Autoscaling
+    </h1>
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+      Designed and implemented a production-aware Kubernetes workload featuring
+      high availability, rolling updates, resource governance, and CPU-based
+      horizontal autoscaling. The project evolved from a foundational classroom
+      deployment into a scalable, resilient system.
+    </p>
+
+    <span class="badge">Completed</span>
+  </header>
+
+  <!-- PROBLEM -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🎯 Problem & Objective</h2>
+    <p class="text-gray-300 leading-relaxed">
+      A basic container deployment is not sufficient for production environments.
+      Applications must tolerate failure, scale under demand, and enforce resource
+      boundaries to maintain cluster stability. The objective was to transform a
+      simple NGINX deployment into a production-style workload capable of dynamic
+      scaling and zero-downtime updates.
+    </p>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🏗️ High-Level Architecture</h2>
+    <p class="text-gray-300 leading-relaxed">
+      The system consists of a dedicated namespace hosting an NGINX Deployment
+      with multiple replicas. A Kubernetes Service provides stable networking,
+      while a Horizontal Pod Autoscaler monitors CPU utilization and dynamically
+      adjusts replica count between defined thresholds. Metrics Server provides
+      the resource metrics required for scaling decisions.
+    </p>
+  </section>
+
+  <!-- DESIGN DECISIONS -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🧠 Key Design Decisions</h2>
+
+    <ul class="space-y-3 list-disc list-inside text-gray-300 leading-relaxed">
+      <li>
+        <strong>Replica-Based High Availability:</strong> Multiple pod replicas
+        ensure fault tolerance and eliminate single points of failure.
+      </li>
+
+      <li>
+        <strong>RollingUpdate Strategy:</strong> Configured to allow controlled,
+        zero-downtime application upgrades.
+      </li>
+
+      <li>
+        <strong>Resource Requests & Limits:</strong> Implemented to enforce
+        predictable CPU allocation and enable accurate autoscaling calculations.
+      </li>
+
+      <li>
+        <strong>Horizontal Pod Autoscaler (HPA):</strong> Configured to scale
+        between 2–6 replicas based on 50% CPU utilization threshold.
+      </li>
+
+      <li>
+        <strong>Namespace Isolation:</strong> Used to logically separate
+        production workloads within the cluster.
+      </li>
+    </ul>
+  </section>
+
+  <!-- TOOLS -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🛠 Tools & Technologies</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">Kubernetes</span>
+      <span class="tag">NGINX</span>
+      <span class="tag">Horizontal Pod Autoscaler</span>
+      <span class="tag">Metrics Server</span>
+      <span class="tag">kubectl</span>
+      <span class="tag">YAML</span>
+      <span class="tag">BusyBox</span>
+      <span class="tag">Git</span>
+    </div>
+  </section>
+
+  <!-- EXECUTION -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Execution & Verification</h2>
+    <p class="text-gray-300 leading-relaxed">
+      The deployment was applied using declarative YAML manifests. Load testing
+      was conducted inside the cluster using a BusyBox container to generate
+      continuous HTTP requests. Replica scaling was monitored in real-time using
+      <code>kubectl get hpa -w</code>, confirming dynamic adjustment under load.
+    </p>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🚧 Challenges Faced</h2>
+    <ul class="space-y-3 list-disc list-inside text-gray-300 leading-relaxed">
+      <li>
+        <strong>HPA Not Scaling:</strong> Initially caused by missing CPU resource
+        requests, which are required for utilization calculations.
+      </li>
+
+      <li>
+        <strong>Metrics Visibility Issues:</strong> Resolved by installing and
+        validating Metrics Server functionality.
+      </li>
+
+      <li>
+        <strong>Port Conflicts During Testing:</strong> Addressed by adjusting
+        local port-forward configurations.
+      </li>
+
+      <li>
+        <strong>Git Workflow Conflicts:</strong> Resolved through proper rebase
+        and conflict resolution during repository setup.
+      </li>
+    </ul>
+  </section>
+
+  <!-- LEARNINGS -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">💡 Key Learnings</h2>
+    <ul class="space-y-3 list-disc list-inside text-gray-300 leading-relaxed">
+      <li>Autoscaling depends on defined resource requests and accurate metrics.</li>
+      <li>Kubernetes enforces desired state and self-healing automatically.</li>
+      <li>Zero-downtime updates require explicit rolling update configuration.</li>
+      <li>Production readiness extends beyond deployment to scaling and governance.</li>
+    </ul>
+  </section>
+
+  <!-- OUTCOME -->
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Outcome & Final Result</h2>
+    <p class="text-gray-300 leading-relaxed">
+      The final implementation delivered a highly available and elastically
+      scalable Kubernetes workload capable of dynamically adjusting replica
+      count based on real-time CPU utilization. The system demonstrated
+      production-level behavior including fault tolerance, controlled upgrades,
+      and resource enforcement.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <a
+      href="https://github.com/Cwendee/nginx-k8s-production-deployment"
+      target="_blank"
+      class="cta inline-flex items-center gap-2 bg-gray-700 px-6 py-4 rounded-xl text-white">
+      Explore the raw build <span>👉🏽</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © <span id="year"></span> Prudence Anumudu
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
