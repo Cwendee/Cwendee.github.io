@@ -64,11 +64,90 @@
       and cloud concepts are applied in practice.
     </p>
   </header>
-  
+
 <!-- PROJECTS -->
 <section class="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
 
-  <!-- PROJECT 1 -->
+  <!-- LATEST -->
+  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
+    <div>
+      <h2 class="text-xl font-semibold text-white mb-2">
+        Production-Ready Kubernetes Deployment with Horizontal Autoscaling
+      </h2>
+      <p class="text-gray-300 text-sm">
+        Designed and implemented a production-aware Kubernetes workload featuring
+        high availability, rolling updates, resource governance, and CPU-based
+        Horizontal Pod Autoscaling (HPA).
+      </p>
+    </div>
+    <a href="projects/k8s-autoscaling.html" class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+      View full details <span>👉🏽</span>
+    </a>
+  </div>
+
+  <!-- NEXT -->
+  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
+    <div>
+      <h2 class="text-xl font-semibold text-white mb-2">
+        Production-Grade EKS Platform with ALB, HTTPS & IRSA
+      </h2>
+      <p class="text-gray-300 text-sm">
+        A production-grade Kubernetes platform on AWS EKS, provisioned with Terraform
+        and secured using ALB, HTTPS (ACM), and IAM Roles for Service Accounts (IRSA).
+      </p>
+    </div>
+    <a href="projects/eks-alb-https-terraform.html" class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+      View full details <span>👉🏽</span>
+    </a>
+  </div>
+
+  <!-- NEXT -->
+  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
+    <div>
+      <h2 class="text-xl font-semibold text-white mb-2">
+        Production-Style CI/CD Pipeline Using Jenkins and Docker
+      </h2>
+      <p class="text-gray-300 text-sm">
+        A production-style CI/CD pipeline built with Jenkins and Docker, automating
+        build, test, containerization, and deployment with real-world failure handling.
+      </p>
+    </div>
+    <a href="projects/ci-cd-jenkins-docker.html" class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+      View full details <span>👉🏽</span>
+    </a>
+  </div>
+
+  <!-- NEXT -->
+  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
+    <div>
+      <h2 class="text-xl font-semibold text-white mb-2">
+        Terraform AWS ECS Fargate Infrastructure
+      </h2>
+      <p class="text-gray-300 text-sm">
+        Production-style ECS Fargate infrastructure built with Terraform and AWS best practices.
+      </p>
+    </div>
+    <a href="projects/terraform-ecs-fargate.html" class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+      View full details <span>👉🏽</span>
+    </a>
+  </div>
+
+  <!-- NEXT -->
+  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
+    <div>
+      <h2 class="text-xl font-semibold text-white mb-2">
+        Multi-AZ Nginx Orchestration with Ansible (AWS)
+      </h2>
+      <p class="text-gray-300 text-sm">
+        Highly available Nginx deployment across multiple AWS Availability Zones automated with Ansible.
+      </p>
+    </div>
+    <a href="projects/multi-az-nginx.html" class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+      View full details <span>👉🏽</span>
+    </a>
+  </div>
+
+  <!-- OLDEST -->
   <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
     <div>
       <h2 class="text-xl font-semibold text-white mb-2">
@@ -79,113 +158,17 @@
         infrastructure using Ansible and Infrastructure as Code.
       </p>
     </div>
-    <a
-      href="projects/ansible-multinode.html"
-      class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+    <a href="projects/ansible-multinode.html" class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
       View full details <span>👉🏽</span>
     </a>
   </div>
-
-  <!-- PROJECT 2 -->
-  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
-    <div>
-      <h2 class="text-xl font-semibold text-white mb-2">
-        Multi-AZ Nginx Orchestration with Ansible (AWS)
-      </h2>
-      <p class="text-gray-300 text-sm">
-        Highly available Nginx deployment across multiple AWS Availability Zones automated with Ansible.
-      </p>
-    </div>
-    <a
-      href="projects/multi-az-nginx.html"
-      class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-      View full details <span>👉🏽</span>
-    </a>
-  </div>
-
-  <!-- PROJECT 3 -->
-  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
-    <div>
-      <h2 class="text-xl font-semibold text-white mb-2">
-        Terraform AWS ECS Fargate Infrastructure
-      </h2>
-      <p class="text-gray-300 text-sm">
-        Production-style ECS Fargate infrastructure built with Terraform and AWS best practices.
-      </p>
-    </div>
-    <a
-      href="projects/terraform-ecs-fargate.html"
-      class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-      View full details <span>👉🏽</span>
-    </a>
-  </div>
-
-  <!-- PROJECT 4 -->
-  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
-    <div>
-      <h2 class="text-xl font-semibold text-white mb-2">
-        Production-Style CI/CD Pipeline Using Jenkins and Docker
-      </h2>
-      <p class="text-gray-300 text-sm">
-  A production-style CI/CD pipeline built with Jenkins and Docker, automating
-  build, test, containerization, and deployment with real-world failure handling.
-</p>
-    </div>
-    <a
-      href="projects/ci-cd-jenkins-docker.html"
-      class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-      View full details <span>👉🏽</span>
-    </a>
-  </div>
-
-  <!-- PROJECT 5 -->
-  <div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
-    <div>
-      <h2 class="text-xl font-semibold text-white mb-2">
-        Production-Grade EKS Platform with ALB, HTTPS & IRSA
-      </h2>
-      <p class="text-gray-300 text-sm">
-  A production-grade Kubernetes platform on AWS EKS, provisioned with Terraform
-  and secured using ALB, HTTPS (ACM), and IAM Roles for Service Accounts (IRSA).
-</p>
-    </div>
-    <a
-      href="projects/eks-alb-https-terraform.html"
-      class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-      View full details <span>👉🏽</span>
-    </a>
-  </div>
-
-  <!-- PROJECT (KUBERNETES AUTOSCALING) -->
-<div class="project-card bg-slate-800 rounded-xl p-6 flex flex-col justify-between w-full">
-  <div>
-    <h2 class="text-xl font-semibold text-white mb-2">
-      Production-Ready Kubernetes Deployment with Horizontal Autoscaling
-    </h2>
-    <p class="text-gray-300 text-sm">
-      Designed and implemented a production-aware Kubernetes workload featuring
-      high availability, rolling updates, resource governance, and CPU-based
-      Horizontal Pod Autoscaling (HPA).
-    </p>
-  </div>
-  <a
-    href="projects/k8s-autoscaling.html"
-    class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-    View full details <span>👉🏽</span>
-  </a>
-</div>
-
 
 </section>
 
-
-  </section>
-
 </main>
 
-
 </body>
-</html>
+
 <footer class="flex flex-col items-center space-y-4 py-10">
   <div class="flex space-x-8">
     <a href="https://github.com/Cwendee" target="_blank">
@@ -200,3 +183,4 @@
   </div>
   <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
 </footer>
+</html>
