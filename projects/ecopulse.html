@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌊 Ecopulse – Climate Risk Intelligence Platform | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .tag {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .badge {
+      background: #065f46;
+      color: #6ee7b7;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+    .sdg-badge {
+      background: #1e3a5f;
+      color: #93c5fd;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cta {
+      transition: all 0.3s ease;
+    }
+    .cta span {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cta:hover {
+      box-shadow: 0 0 25px #4cc9f0;
+    }
+    .cta:hover span {
+      opacity: 1;
+    }
+    .endpoint-table th {
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 1px solid #1e293b;
+    }
+    .endpoint-table td {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #1e293b;
+      color: #cbd5e1;
+      vertical-align: top;
+    }
+    .endpoint-table tr:last-child td {
+      border-bottom: none;
+    }
+    .method-get {
+      background: #1e3a5f;
+      color: #93c5fd;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      font-family: monospace;
+    }
+    .method-post {
+      background: #14532d;
+      color: #86efac;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      font-family: monospace;
+    }
+    .method-delete {
+      background: #450a0a;
+      color: #fca5a5;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      font-family: monospace;
+    }
+    .endpoint-path {
+      font-family: monospace;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-gray-200 min-h-screen">
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../projects.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Laboratory
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-16 space-y-14">
+
+  <header>
+    <h1 class="text-3xl font-semibold text-white mb-3">
+      🌊 Ecopulse – Climate Risk Intelligence Platform
+    </h1>
+
+    <p class="text-gray-300 max-w-2xl mb-4">
+      Designed and deployed the backend infrastructure and APIs for a flood risk
+      awareness platform that translates complex climate data into plain-language,
+      location-specific guidance for communities and SMEs across Africa.
+    </p>
+
+    <div class="flex flex-wrap gap-3 items-center">
+      <span class="badge">Completed ✅</span>
+      <span class="sdg-badge">🌍 SDG 13: Climate Action</span>
+      <span class="text-gray-400 text-sm">Women Techsters Fellowship</span>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🎯 Problem & Objective</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Across Africa, flooding causes widespread damage to homes, businesses, and
+      livelihoods every year. The core issue is not a shortage of climate data.
+      The issue is that the data is technical, generic, and disconnected from the
+      people who need it most. Residents in flood prone areas receive warnings
+      they cannot interpret, and small businesses get no meaningful guidance at all.
+    </p>
+    <p class="text-gray-300 leading-relaxed mt-4">
+      The objective of Ecopulse was to bridge that gap by building a platform
+      that ingests rainfall and flood risk data, processes it, and delivers it
+      back to users in plain language, specific to their location. My role was to
+      design and deploy the backend infrastructure that made this possible.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-3">🌍 SDG Alignment: SDG 13 — Climate Action</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Ecopulse directly supports SDG 13, which calls for urgent action to combat
+      climate change and its impacts, with a specific focus on building resilience
+      and adaptive capacity in vulnerable communities. Flooding is one of the most
+      visible consequences of climate change across the African continent, and the
+      communities most affected are often the ones with the least access to clear,
+      usable information. By translating technical climate data into accessible,
+      location-specific guidance, Ecopulse supports early preparedness, reduces
+      avoidable losses, and helps everyday people and businesses make informed
+      decisions before disaster strikes.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🏗️ High-Level Architecture</h2>
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The system is structured in four clear layers working together:
+    </p>
+    <div class="space-y-3">
+      <div class="bg-slate-800 rounded-lg px-5 py-4 flex items-start gap-4">
+        <span class="text-blue-400 font-mono text-sm mt-0.5">01</span>
+        <div>
+          <p class="text-white font-medium text-sm">Data Pipeline</p>
+          <p class="text-gray-400 text-sm mt-1">Processes CHIRPS rainfall data and outputs structured risk metrics per region</p>
+        </div>
+      </div>
+      <div class="flex justify-center text-gray-600 text-lg">↓</div>
+      <div class="bg-slate-800 rounded-lg px-5 py-4 flex items-start gap-4">
+        <span class="text-blue-400 font-mono text-sm mt-0.5">02</span>
+        <div>
+          <p class="text-white font-medium text-sm">Backend API (FastAPI)</p>
+          <p class="text-gray-400 text-sm mt-1">Serves processed data through clean, validated endpoints</p>
+        </div>
+      </div>
+      <div class="flex justify-center text-gray-600 text-lg">↓</div>
+      <div class="bg-slate-800 rounded-lg px-5 py-4 flex items-start gap-4">
+        <span class="text-blue-400 font-mono text-sm mt-0.5">03</span>
+        <div>
+          <p class="text-white font-medium text-sm">AI Layer (OpenRouter / GPT-4o-mini)</p>
+          <p class="text-gray-400 text-sm mt-1">Converts technical risk outputs into simple, user-friendly explanations</p>
+        </div>
+      </div>
+      <div class="flex justify-center text-gray-600 text-lg">↓</div>
+      <div class="bg-slate-800 rounded-lg px-5 py-4 flex items-start gap-4">
+        <span class="text-blue-400 font-mono text-sm mt-0.5">04</span>
+        <div>
+          <p class="text-white font-medium text-sm">Frontend (React + Vite)</p>
+          <p class="text-gray-400 text-sm mt-1">Presents information to end users via a mobile-friendly web interface</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-gray-400 text-sm mt-5 leading-relaxed">
+      I owned the backend and infrastructure layer, and acted as the integration
+      point between the data science pipeline, the AI layer, and the frontend team.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🧠 Key Design Decisions</h2>
+
+    <div class="space-y-6 text-gray-300 leading-relaxed">
+      <div>
+        <p class="text-white font-medium mb-2">RESTful API with FastAPI</p>
+        <p class="text-gray-300 mb-4">
+          Designed and implemented a full suite of structured endpoints covering
+          the entire user journey:
+        </p>
+        <div class="overflow-x-auto rounded-lg border border-slate-700">
+          <table class="endpoint-table w-full">
+            <thead class="bg-slate-800">
+              <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody class="bg-slate-900">
+              <tr>
+                <td><span class="method-post">POST</span></td>
+                <td class="endpoint-path">/location/resolve</td>
+                <td>Resolves a user's location input into a structured region</td>
+              </tr>
+              <tr>
+                <td><span class="method-get">GET</span></td>
+                <td class="endpoint-path">/countries</td>
+                <td>Returns the list of available countries</td>
+              </tr>
+              <tr>
+                <td><span class="method-get">GET</span></td>
+                <td class="endpoint-path">/countries/{country_code}/regions</td>
+                <td>Returns regions under a specific country</td>
+              </tr>
+              <tr>
+                <td><span class="method-get">GET</span></td>
+                <td class="endpoint-path">/risk/criteria</td>
+                <td>Exposes the classification logic for transparency</td>
+              </tr>
+              <tr>
+                <td><span class="method-get">GET</span></td>
+                <td class="endpoint-path">/risk/high</td>
+                <td>Aggregates all currently high-risk regions</td>
+              </tr>
+              <tr>
+                <td><span class="method-get">GET</span></td>
+                <td class="endpoint-path">/risk/{region_id}</td>
+                <td>Retrieves flood risk data for a specific region</td>
+              </tr>
+              <tr>
+                <td><span class="method-get">GET</span></td>
+                <td class="endpoint-path">/risk/{region_id}/explain</td>
+                <td>Returns an AI-generated plain-language explanation of the risk</td>
+              </tr>
+              <tr>
+                <td><span class="method-post">POST</span></td>
+                <td class="endpoint-path">/eco/chat</td>
+                <td>Powers the ECO assistant for conversational flood risk queries</td>
+              </tr>
+              <tr>
+                <td><span class="method-get">GET</span></td>
+                <td class="endpoint-path">/health</td>
+                <td>Health check endpoint for uptime monitoring</td>
+              </tr>
+              <tr>
+                <td><span class="method-post">POST</span></td>
+                <td class="endpoint-path">/subscribe</td>
+                <td>Registers a user for flood alert notifications</td>
+              </tr>
+              <tr>
+                <td><span class="method-delete">DELETE</span></td>
+                <td class="endpoint-path">/unsubscribe</td>
+                <td>Removes a user from the alert system</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-white font-medium mb-1">Structured over Free-Text Location Input</p>
+        <p>
+          Instead of relying on free-text location search, I implemented a
+          country → region selection model using stable <code class="text-blue-300 bg-slate-800 px-1 rounded">region_id</code> identifiers.
+          This eliminated ambiguity, improved data mapping accuracy, and made the
+          API deterministic and reliable.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-white font-medium mb-1">Database over File-Based Serving</p>
+        <p>
+          Transitioned from serving raw <code class="text-blue-300 bg-slate-800 px-1 rounded">.parquet</code> files directly to
+          structured Supabase database tables. This improved performance, enabled
+          upsert operations with conflict resolution, and made the system more
+          maintainable.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-white font-medium mb-1">AI Integration via OpenRouter</p>
+        <p>
+          Used OpenRouter with GPT-4o-mini rather than direct OpenAI integration,
+          for flexibility and cost efficiency. The AI layer takes technical rainfall
+          metrics and risk classifications and returns concise, accessible
+          explanations for non-technical users.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-white font-medium mb-1">Practical DevOps Decisions</p>
+        <p>
+          Deployed the backend on Render with environment variable management and
+          configured UptimeRobot for continuous health checks to prevent service
+          sleep on the free tier. Intentionally avoided Docker and Kubernetes for
+          the MVP, prioritizing stability and delivery speed over infrastructure
+          complexity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🛠️ Tools & Technologies</h2>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">FastAPI (Python)</span>
+      <span class="tag">Pydantic</span>
+      <span class="tag">Supabase (PostgreSQL)</span>
+      <span class="tag">Pandas</span>
+      <span class="tag">Parquet</span>
+      <span class="tag">CHIRPS Rainfall Data</span>
+      <span class="tag">geoBoundaries (ADM2)</span>
+      <span class="tag">OpenRouter API</span>
+      <span class="tag">GPT-4o-mini</span>
+      <span class="tag">Render</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">UptimeRobot</span>
+      <span class="tag">Resend</span>
+      <span class="tag">Git</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">🚧 Challenges Faced</h2>
+    <ul class="space-y-4 text-gray-300 leading-relaxed list-disc list-inside">
+      <li>
+        <strong class="text-white">Dependency conflicts on deployment:</strong> Resolved
+        Supabase and HTTPX version conflicts that were causing deployment failures on Render.
+      </li>
+      <li>
+        <strong class="text-white">Data structure gaps:</strong> The pipeline output was
+        missing location metadata needed by the frontend. I enriched the dataset by merging
+        ADM2 administrative boundary data including country names, region names, and country codes.
+      </li>
+      <li>
+        <strong class="text-white">Route conflicts in FastAPI:</strong> Debugged and resolved
+        conflicting route definitions that were causing incorrect endpoint resolution.
+      </li>
+      <li>
+        <strong class="text-white">Branch misalignment:</strong> Resolved Git branch conflicts
+        across a multi-person team working on overlapping parts of the codebase.
+      </li>
+      <li>
+        <strong class="text-white">Pipeline stability:</strong> Debugged and stabilized the
+        data pipeline execution, and pivoted the rainfall ingestion strategy from STAC-based
+        API queries to local GeoTIFF ingestion for better determinism and reproducibility.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">💡 Key Learnings</h2>
+    <ul class="space-y-3 text-gray-300 leading-relaxed list-disc list-inside">
+      <li>
+        Bridging data science and backend engineering requires deliberate architecture
+        decisions, not just working code.
+      </li>
+      <li>
+        Keeping layers cleanly separated made debugging faster and collaboration
+        smoother across the team.
+      </li>
+      <li>
+        Practical DevOps under constraints means knowing what not to build just as
+        much as what to build.
+      </li>
+      <li>
+        Cross-functional collaboration across backend, data science, frontend, and
+        project management disciplines sharpens your ability to communicate decisions
+        clearly and build with the full system in mind.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✅ Outcome & Final Result</h2>
+    <div class="space-y-4 text-gray-300 leading-relaxed">
+      <p>
+        Ecopulse was successfully built and deployed as a live, cloud-based platform.
+        The backend delivered reliable, structured flood risk data through a
+        production-aware API, with AI-powered explanations that made technical
+        climate information accessible to everyday users.
+      </p>
+      <p>
+        The system handled real geospatial data, integrated across four technical
+        disciplines, and was delivered within the capstone timeline.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white mb-4">✨ Closing Reflection</h2>
+    <p class="text-gray-300 leading-relaxed">
+      This project strengthened my ability to design real-world backend systems,
+      debug across application and database layers, and make practical DevOps
+      decisions under pressure. Working across a cross-functional team with
+      different technical backgrounds pushed me to communicate clearly, integrate
+      thoughtfully, and deliver a production-aware system that solves a problem
+      that actually matters.
+    </p>
+  </section>
+
+  <section>
+    <a
+      href="#"
+      target="_blank"
+      class="cta inline-flex items-center gap-2 bg-gray-700 px-6 py-4 rounded-xl text-white">
+      Explore the raw build <span>👉🏽</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © 2025 Prudence Anumudu
+</footer>
+
+</body>
+</html>
