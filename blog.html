@@ -63,103 +63,108 @@
     </p>
   </header>
 
-  <!-- BLOG CARDS -->
+  <!-- BLOG CARDS — latest to oldest -->
   <section class="grid sm:grid-cols-2 gap-8">
 
-    <!-- BLOG POST 1 (unchanged) -->
+    <!-- 1. LATEST — Ecopulse -->
+    <a href="blog/ecopulse-blog.html" class="note-card flex flex-col justify-between">
+      <div>
+        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
+          <span class="animate-bounce">🔧</span>
+          The Hardest Part of My Backend Project Wasn't the Backend
+        </h2>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          What building a climate risk API for Ecopulse taught me about data, systems thinking,
+          and the gap between "it works" and production-ready.
+        </p>
+      </div>
+      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+        Read post <span>👉🏽</span>
+      </span>
+    </a>
+
+    <!-- 2. From Classroom Kubernetes to Production Thinking -->
+    <a href="blog/kubernetes-classroom-to-production.html" class="note-card flex flex-col justify-between">
+      <div>
+        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
+          <span class="animate-bounce">🌱</span>
+          From Classroom Kubernetes to Production Thinking 🚀
+        </h2>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Revisiting a simple classroom NGINX deployment and discovering what high availability,
+          autoscaling, and production readiness truly mean.
+        </p>
+      </div>
+      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+        Read post <span>👉🏽</span>
+      </span>
+    </a>
+
+    <!-- 3. Building a Production EKS Platform -->
+    <a href="blog/building-a-production-eks-platform.html" class="note-card flex flex-col justify-between">
+      <div>
+        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
+          <span class="animate-bounce">🚀</span>
+          Building a Production EKS Platform
+        </h2>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          From first contact with Kubernetes to deploying a secure, production-grade EKS platform
+          with HTTPS and IRSA.
+        </p>
+      </div>
+      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+        Read post <span>👉🏽</span>
+      </span>
+    </a>
+
+    <!-- 4. My First Deep Dive into Kubernetes -->
+    <a href="blog/kubernetes-deep-dive.html" class="note-card flex flex-col justify-between">
+      <div>
+        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
+          <span class="animate-bounce">🚀</span>
+          My First Deep Dive into Kubernetes
+        </h2>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Lessons, Confusion, and Real Understanding
+        </p>
+      </div>
+      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+        Read post <span>👉🏽</span>
+      </span>
+    </a>
+
+    <!-- 5. Building a CI/CD Pipeline -->
+    <a href="blog/building-a-ci-cd-pipeline.html" class="note-card flex flex-col justify-between">
+      <div>
+        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
+          <span class="animate-bounce">🌱</span>
+          Building a CI/CD Pipeline and Learning How Systems Really Behave
+        </h2>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          What My Jenkins & Docker Project Actually Taught Me
+        </p>
+      </div>
+      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
+        Read post <span>👉🏽</span>
+      </span>
+    </a>
+
+    <!-- 6. OLDEST — From Terraform Confusion to Clarity -->
     <a href="blog/terraform-confusion-to-clarity.html" class="note-card flex flex-col justify-between">
       <div>
         <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
           <span class="animate-bounce">📝</span>
           From Terraform Confusion to Clarity
         </h2>
-
         <p class="text-sm text-gray-400 leading-relaxed">
           What building a real ECS Fargate project taught me about Terraform modules,
           execution context, and infrastructure design.
         </p>
       </div>
-
       <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
         Read post <span>👉🏽</span>
       </span>
     </a>
-
-    <!-- BLOG POST 2 (FIXED) -->
-    <a href="blog/building-a-ci-cd-pipeline.html" class="note-card flex flex-col justify-between">
-      <div>
-        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
-  <span class="animate-bounce">🌱</span>
-  Building a CI/CD Pipeline and Learning How Systems Really Behave
-</h2>
-
-        <p class="text-sm text-gray-400">
-          What My Jenkins & Docker Project Actually Taught Me
-        </p>
-      </div>
-
-      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-        Read post <span>👉🏽</span>
-      </span>
-    </a>
-
-    <!-- BLOG POST 3 (FIXED) -->
-    <a href="blog/kubernetes-deep-dive.html" class="note-card flex flex-col justify-between">
-      <div>
-        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
-  <span class="animate-bounce">🚀</span>
-  My First Deep Dive into Kubernetes
-</h2>
-
-        <p class="text-sm text-gray-400">
-          Lessons, Confusion, and Real Understanding
-        </p>
-      </div>
-
-      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-        Read post <span>👉🏽</span>
-      </span>
-    </a>
-
-    <!-- BLOG POST 4 (FIXED) -->
-    <a href="blog/building-a-production-eks-platform.html" class="note-card flex flex-col justify-between">
-      <div>
-        <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
-  <span class="animate-bounce">🚀</span>
-  Building a Production EKS Platform
-</h2>
-
-        <p class="text-sm text-gray-400">
-          From first contact with Kubernetes to deploying a secure, production-grade EKS platform with HTTPS and IRSA.
-        </p>
-      </div>
-
-      <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-        Read post <span>👉🏽</span>
-      </span>
-    </a>
-
-    <!-- BLOG POST (KUBERNETES PROGRESSION) -->
-<a href="blog/from-classroom-kubernetes-to-production-thinking.html" class="note-card flex flex-col justify-between">
-  <div>
-    <h2 class="text-lg font-medium text-white mb-2 flex items-center gap-2">
-      <span class="animate-bounce">🌱</span>
-      From Classroom Kubernetes to Production Thinking 🚀
-    </h2>
-
-    <p class="text-sm text-gray-400">
-      Revisiting a simple classroom NGINX deployment and discovering what high availability,
-      autoscaling, and production readiness truly mean.
-    </p>
-  </div>
-
-  <span class="cta text-glow text-sm mt-4 inline-flex items-center gap-1">
-    Read post <span>👉🏽</span>
-  </span>
-</a>
-
-
-   
 
   </section>
 
@@ -178,8 +183,12 @@
       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" class="w-6 invert">
     </a>
   </div>
-  <p class="text-sm text-gray-400">© 2025 Prudence Anumudu</p>
+  <p class="text-sm text-gray-400">© <span id="year"></span> Prudence Anumudu</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

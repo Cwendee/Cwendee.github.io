@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Hardest Part of My Backend Project Wasn't the Backend | Pruddieverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            glow: '#4cc9f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="text-gray-200 min-h-screen bg-fixed bg-center bg-cover"
+  style="background-image: url('../assets/images/blog-bg.jpg');"
+>
+
+<nav class="flex justify-between items-center px-10 py-6">
+  <a href="../index.html" class="text-white font-semibold text-xl">Pruddieverse</a>
+  <a href="../blog.html" class="text-gray-300 hover:text-white transition text-sm">
+    ← Back to Blog
+  </a>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-20">
+  <div class="bg-midnight/80 rounded-3xl p-10 space-y-14 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm">
+
+  <!-- HEADER -->
+  <header class="space-y-4">
+    <h1 class="text-3xl font-semibold text-white">
+      🔧 The Hardest Part of My Backend Project Wasn't the Backend 🌍
+    </h1>
+    <p class="text-gray-400">
+      What building a climate risk API for Ecopulse taught me about data, systems thinking, and the gap between "it works" and production-ready.
+    </p>
+  </header>
+
+  <!-- SECTION 1 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">1️⃣ It Started Smoothly — Too Smoothly</h2>
+    <p>
+      When I started building the backend for Ecopulse — a climate risk platform that surfaces drought and flood risk data for Nigerian regions — things moved fast.
+    </p>
+    <p>
+      FastAPI endpoints stood up cleanly. Supabase connected without drama. The deployment to Render went smoothly.
+    </p>
+    <p>
+      I remember thinking: <em>this is going well.</em>
+    </p>
+    <p>
+      Then I touched the data. And everything changed.
+    </p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">2️⃣ The Illusion of "API-Ready" Data 🗂️</h2>
+    <p>
+      The data science team was processing satellite raster files, running CHIRPS ingestion pipelines, and aggregating ADM2 geospatial boundaries. That's a different world — and at some point, my backend had to meet theirs.
+    </p>
+    <p>
+      The dataset they produced was analytically sound. But when I tried to serve it through the API, things broke in ways I didn't expect.
+    </p>
+    <p>
+      Region identifiers came through as internal geoBoundaries ADM2 IDs. The frontend expected human-readable names: Ikeja, Kano, Maiduguri. There was no direct mapping.
+    </p>
+    <p>
+      The <code class="bg-white/10 px-1 rounded text-sm">/explain</code> endpoint started throwing 404s. Users would have seen "region not found" on a live product.
+    </p>
+    <p>
+      The fix wasn't more code on the API side — it was merging ADM2 metadata directly into the pipeline output so the bridge existed at the data level, not the serving level.
+    </p>
+    <p>
+      <strong>Lesson: Data that works for analysis is not automatically ready for product integration.</strong>
+    </p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">3️⃣ Complexity Is Not Always Your Responsibility 🧠</h2>
+    <p>
+      There were moments where the volume of technical detail from the data team felt genuinely overwhelming. GeoTIFF files, xarray processing, STAC API traversal, raster aggregation.
+    </p>
+    <p>
+      I started going down rabbit holes trying to understand all of it.
+    </p>
+    <p>
+      At some point, I had to make a deliberate call: stop trying to own the entire system.
+    </p>
+    <p>
+      My responsibility was the API layer — the serving layer. The data pipeline was someone else's domain. My job was to integrate cleanly with its outputs, not replicate or own its internals.
+    </p>
+    <p>
+      <strong>Not every complex component in a system is mine to build. My role was to integrate, not to replicate the data science pipeline.</strong>
+    </p>
+    <p>
+      Filtering what's mine to solve versus what I simply need to work with is one of the most underrated engineering skills I developed during this project.
+    </p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">4️⃣ The Architecture Decisions That Actually Mattered ⚖️</h2>
+    <p>
+      Two decisions shaped the project more than any individual line of code.
+    </p>
+    <p>
+      <strong>Separating pipeline from API.</strong> I kept the data science logic strictly in the ingestion pipeline and kept the API as a clean serving layer. This meant the DS team could update their processing logic without touching my endpoints — and I could evolve the API without breaking their pipeline.
+    </p>
+    <p>
+      <strong>Choosing deterministic over dynamic.</strong> There was pressure to add real-time location detection — grab the user's coordinates, reverse geocode, return regional data automatically. I pushed back. Under a deadline, introducing a third-party dependency with unpredictable behaviour late in the project was a risk I wasn't willing to take.
+    </p>
+    <p>
+      I kept the flow explicit: country → region → result. No ambiguity, no hidden dependencies.
+    </p>
+    <p>
+      <strong>Lesson: Good engineering is not about using every available tool. It's about choosing the simplest architecture that reliably solves the problem.</strong>
+    </p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">5️⃣ Deployment Is Where Assumptions Break 🚀</h2>
+    <p>
+      The code worked locally. Then I deployed to Render — and things that had no reason to fail, failed.
+    </p>
+    <p>
+      Import paths that worked on my machine broke in the deployment environment because of how Python resolves relative paths differently across contexts. A dependency that installed cleanly locally conflicted on the server.
+    </p>
+    <p>
+      The virtual environment got corrupted mid-project and rebuilding it from scratch turned out to be faster than debugging it.
+    </p>
+    <p>
+      Render's free tier put the service to sleep after inactivity — I solved that with UptimeRobot.
+    </p>
+    <p>
+      None of these were glamorous problems. But they were the problems that actually blocked deployment. Solving them required a different kind of thinking — not algorithmic, but operational.
+    </p>
+    <p>
+      <strong>Local success is not a guarantee of production success. Environment setup is part of the job.</strong>
+    </p>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">6️⃣ Git Doesn't Make Mistakes 🌿</h2>
+    <p>
+      There was a stretch where I was pushing changes, seeing "Everything up-to-date" in the terminal, and watching nothing change on the live service.
+    </p>
+    <p>
+      It took longer than I'd like to admit to realise I was working on <code class="bg-white/10 px-1 rounded text-sm">develop</code> and the deployment was pulling from <code class="bg-white/10 px-1 rounded text-sm">main</code>.
+    </p>
+    <p>
+      This experience exposed something more important than a branching mistake: in a multi-person project, you can't assume any branch has the full picture. Code evolves independently across branches, and integration timing matters in ways that aren't always visible until something breaks.
+    </p>
+    <p>
+      <strong>Git doesn't make mistakes. It follows instructions exactly. The confusion was always mine.</strong>
+    </p>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">7️⃣ The AI Layer Was the Easy Part 🤖</h2>
+    <p>
+      Most people assume the GPT integration would be the hardest part of a project like this. It wasn't.
+    </p>
+    <p>
+      Calling the API, passing structured input, getting a completion back — that was mechanical. What took real thought was the context design: shaping the prompt so the model returned something actually useful, setting the right constraints (word count, tone, specificity), and making sure the input data feeding the AI was clean and consistent.
+    </p>
+    <p>
+      <strong>The value of AI in applications comes from how you shape the input, not just the model you choose.</strong>
+    </p>
+    <p>
+      The lesson wasn't about AI. It was about where real complexity lives in a system — and it's almost never where you expect it.
+    </p>
+  </section>
+
+  <!-- FINAL REFLECTION -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold text-white tracking-tight">🎯 What I'd Do Differently</h2>
+    <p>
+      I'd align on data contracts earlier — before writing a single endpoint, I'd confirm exactly what the data team's output structure would look like and design around that.
+    </p>
+    <p>
+      I'd also treat production parity as a first-class concern from day one, not something to sort out at the end.
+    </p>
+    <p>
+      But honestly? I'm glad the project was hard in the ways it was.
+    </p>
+    <p>
+      The challenges that felt frustrating in the moment are the ones that changed how I think about building systems — not just coding them.
+    </p>
+    <p>
+      <strong>This project marked a transition from writing code to designing systems. Those are not the same thing.</strong>
+    </p>
+  </section>
+
+  </div>
+</main>
+
+<footer class="text-center text-sm text-gray-400 py-10">
+  © <span id="year"></span> Prudence Anumudu
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
